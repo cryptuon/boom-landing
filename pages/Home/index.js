@@ -6,12 +6,13 @@ const luckiestGuy = Luckiest_Guy({
   weight: '400',
   variable: '--font-luckiestGuy',
 })
-import Ticket from './components/Ticket'
-import SmallTicket from './components//SmallTicket'
-import Sidebar from './components/Sidebar'
-import FrameImage from './components/FrameImage'
-import FrameTikcets from './components/FrameTickets'
-import FrameSmallTikcets from './components/FrameSmallTickets'
+import Ticket from '../components/Ticket'
+import SmallTicket from '../components//SmallTicket'
+import Sidebar from '../components/Sidebar'
+import FrameImage from '../components/FrameImage'
+import FrameTikcets from '../components/FrameTickets'
+import FrameSmallTikcets from '../components/FrameSmallTickets'
+import NavBar from './NavBar'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <NavBar/>
       <div className="">
         <div className="flex flex-1 justify-end h-screen ">
           <div className="flex flex-1 flex-col items-center ">

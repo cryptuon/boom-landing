@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
       </Head>
       <body>
+        {/* <NavBar /> */}
         <Main />
         <NextScript />
       </body>
