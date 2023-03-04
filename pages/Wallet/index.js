@@ -1,7 +1,7 @@
-'use client';
+'use client'
 import Image from 'next/image'
 import Head from 'next/head'
-import { Cormorant_SC, Luckiest_Guy } from '@next/font/google'
+import { Butcherman, Cormorant_SC, Luckiest_Guy } from '@next/font/google'
 const luckiestGuy = Luckiest_Guy({
   subsets: ['latin'],
   weight: '400',
@@ -27,6 +27,7 @@ import {
 import { arbitrum, mainnet, polygon } from 'wagmi/chains'
 import { Web3Button, useWeb3Modal } from '@web3modal/react'
 import { InjectedConnector } from 'wagmi/connectors/injected'
+import { useEffect } from 'react'
 
 const chains = [arbitrum, mainnet, polygon]
 
@@ -48,7 +49,39 @@ const wagmiClient = createClient({
 // Web3Modal Ethereum Client
 const ethereumClient = new EthereumClient(wagmiClient, chains)
 
-export default function Home() {
+async function getNFTs() {
+  // console.log("fetching NFTs")
+  const baseURL =
+    'https://eth-mainnet.g.alchemy.com/v2/_pI4M8h8oFOeo2dEpkvZvQK41y-jrRKc'
+  const address = 'elanhalpern.eth'
+  const url = `${baseURL}/getNFTs/?owner=${address}`
+
+  var requestOptions = {
+    method: 'get',
+    redirect: 'follow',
+  }
+
+  try {
+    const response = await fetch(url, requestOptions)
+    const result = await response.json()
+    // console.log(result)
+    const numNfts = result['totalCount'];
+    const nftList = result['ownedNfts'];
+    console.log(`Total NFTs owned by ${address}: ${numNfts} \n`)
+
+    // console.log(nftList)
+    let i = 1;
+
+    for (let nft of nftList) {
+        console.log(`${i}. ${nft['metadata']['name']}`)
+        i++;
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export default function Wallet() {
   const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
   const { address, isConnected } = useAccount('')
   // const { data: ensName } = useEnsName({ address })
@@ -113,8 +146,11 @@ export default function Home() {
             height={100}
           />
         </div>
-        <div className="flex justify-end border">
+        <div className="flex flex-col border">
           <Web3Button />
+          <div>
+            <button onClick={getNFTs}>Get NFTs</button>
+          </div>
         </div>
       </div>
       <Web3Modal

@@ -22,11 +22,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="">
-        <div className="flex flex-1 justify-end h-screen ">
-          <div className="flex flex-1 flex-col items-center ">
+      <div className="overflow-x-hidden">
+        <div className="flex flex-1 flex-row justify-end h-screen ">
+          <div className="flex flex-1 flex-col items-center">
             <p
-              className={`${luckiestGuy.variable} font-display text-8xl pt-24`}
+              className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight pt-24`}
             >
               Get
               <br />
@@ -36,32 +36,30 @@ export default function Home() {
               <br />
               NOW
             </p>
-            <div>
+            <div className="h-[4vw] w-[4vw] relative">
               <Image
                 src="./bubbles.svg"
-                width={90}
-                height={90}
-                className="z-[10] translate-x-20 -translate-y-5"
+                fill
+                className="z-[10] translate-x-20 -translate-y-5 "
               />
             </div>
           </div>
           <FrameTikcets />
         </div>
-        <div className="flex flex-1 flex-row mt-10 justify-evenly items-center">
+        <div className="flex flex-1 flex-row mt-10 justify-evenly items-center h-screen">
           <div className="flex flex-col gap-y-5">
             <div className="flex flex-row justify-end items-end ">
               <SmallTicket />
-              <Image
-                src="./free.svg"
-                width={250}
-                height={250}
-                className="ml-5 justify-end"
-              />
+              <div className="relative h-[13vw] w-[13vw]">
+                <Image src="./free.svg" fill className="ml-5 justify-end" />
+              </div>
             </div>
             <Ticket />
           </div>
           <div>
-            <p className={`${luckiestGuy.variable} font-display text-8xl `}>
+            <p
+              className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight `}
+            >
               How to <br />
               Get
               <br />
@@ -69,13 +67,19 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex flex-1 flex-row ml-40 mt-20 items-center pb-10 gap-10 ">
-          <Sidebar />
-          <FrameSmallTikcets />
+        <div className="flex flex-1 flex-row ml-40 mt-20  pb-10 gap-10 h-screen ">
+          <div>
+            <Sidebar />
+          </div>
+          <div className="flex border-2 h-[80vh]">
+            <FrameSmallTikcets />
+          </div>
         </div>
-        <div className="flex flex-1 flex-row mt-10 justify-evenly items-center">
+        <div className="flex flex-1 flex-row mt-10 justify-evenly items-center h-screen">
           <div className="flex flex-col">
-            <p className={`${luckiestGuy.variable} font-display text-8xl `}>
+            <p
+              className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight `}
+            >
               nft’s
               <br />
               THAT

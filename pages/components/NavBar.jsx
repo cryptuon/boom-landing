@@ -1,35 +1,71 @@
 import Image from 'next/image'
 // import logo from '/logo.svg'
 // import filter from '/filter.svg'
+import {
+    EthereumClient,
+    modalConnectors,
+    walletConnectProvider,
+} from '@web3modal/ethereum'
+
+import { Web3Modal } from '@web3modal/react'
+
+import {
+    configureChains,
+    createClient,
+    WagmiConfig,
+    useAccount,
+    useConnect,
+    useEnsName,
+} from 'wagmi'
+
+import { arbitrum, mainnet, polygon } from 'wagmi/chains'
+
+import WalletButton from './WalletConnectButton'
+
+const chains = [arbitrum, mainnet, polygon]
+
+// Wagmi client
+const { provider } = configureChains(chains, [
+    walletConnectProvider({ projectId: 'bd46fa8128fb1ebc5d7b0b8b6ea44682' }),
+])
+const wagmiClient = createClient({
+    autoConnect: false,
+    connectors: modalConnectors({
+        projectId: 'bd46fa8128fb1ebc5d7b0b8b6ea44682',
+        version: '1', // or "2"
+        appName: 'web3Modal',
+        chains,
+    }),
+    provider,
+})
+
+// Web3Modal Ethereum Client
+const ethereumClient = new EthereumClient(wagmiClient, chains)
+
 
 export default function NavBar() {
+
     return (
-        <header>
-            <nav className="flex items-center justify-between flex-wrap p-6">
-                <div className='flex pr-10 items-center'>
-                    <Image src="/logo.svg" alt="logo" width={163} height={70} className="mr-12" />
-                    <form className="flex items-center">
-                        <div className="rounded-lg shadow-[5px_7px_0px_2px_rgba(0,0,0,1)] ">
-                            <input type="text" placeholder="Eg. Jaguar" className="placeholder:text-black font-medium  border-2 border-black h-10 px-5 pr-16 rounded-lg rounded-r-none text-sm focus:outline-none " />
-                            <button
-                                type='button'
-                                // type="submit"
-                                className="font-medium h-10 px-5 rounded-lg rounded-l-none border-2 border-l-0 border-black"
-                                // onClick={postDataToMongoDB}
-                            >
-                                Search
-                            </button>
+        <WagmiConfig client={wagmiClient}>
+
+            <header>
+                <nav className="flex items-center justify-between flex-wrap p-6">
+                    <div className="flex items-center flex-1 justify-between ">
+                        <div className='flex pr-10 items-center justify-center'>
+                            <Image src="/logo.svg" alt="logo" width={163} height={70} className="mr-12" />
                         </div>
-                    </form>
-                    <div className='ml-10 flex'>
-                        <p className="text-black font-medium mr-1">
-                            Filter
-                        </p>
-                        <Image src='/filter.svg' alt="filter" width={15} height={15} />
+                        <WalletButton />
                     </div>
-                </div>
-            </nav>
-        </header >
+
+                </nav>
+            </header >
+
+            <Web3Modal
+                projectId="bd46fa8128fb1ebc5d7b0b8b6ea44682"
+                ethereumClient={ethereumClient}
+            />
+        </WagmiConfig>
+
     );
 }
 
@@ -50,7 +86,7 @@ export default function NavBar() {
 //                 "offer_description": "Azuki NFT holders will get 30% off on all the products on Meesho. This is a one time offer and can be availed one time for a single NFT.",
 //                 "offer_avail_count": "300"
 //             }
-//         },        
+//         },
 //         {
 //             "BEWAKOOFCAMPAIGN1": {
 //                 "details": {
@@ -67,7 +103,7 @@ export default function NavBar() {
 //                 "offer_description": "0n1 NFT holders will get 10% off on all products on Bewakoof. This is a one time offer and can be availed one time for a single NFT.",
 //                 "offer_avail_count": "237"
 //             }
-//         },        
+//         },
 //         {
 //             "BOVADACAMPAIGN1": {
 //                 "details": {
