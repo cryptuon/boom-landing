@@ -7,6 +7,7 @@ const luckiestGuy = Luckiest_Guy({
   variable: '--font-luckiestGuy',
 })
 import { useAccount } from 'wagmi'
+import UserNfts from '../UserNfts'
 export default function LandingSection() {
   const { address, isConnected } = useAccount('')
 
@@ -24,6 +25,7 @@ export default function LandingSection() {
           >
             {address.slice(0, 9)}...
           </p>
+          <UserNfts walletAddress={address}/>
         </div>
       ) : (
         <div className="flex flex-1 flex-col items-center">
