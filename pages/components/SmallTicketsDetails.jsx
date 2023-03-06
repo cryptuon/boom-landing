@@ -1,7 +1,4 @@
-// @refresh reset
-
 import Image from 'next/image'
-// import TicketOutline from '/TicketOutline.svg'
 import Link from 'next/link'
 import { BiCopy } from 'react-icons/bi'
 export default function SmallTicketDetails({ number, link }) {

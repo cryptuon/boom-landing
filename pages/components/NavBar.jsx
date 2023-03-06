@@ -7,7 +7,7 @@ import {
     walletConnectProvider,
 } from '@web3modal/ethereum'
 
-import { Web3Modal } from '@web3modal/react'
+import { Web3Modal, useWeb3Modal } from '@web3modal/react'
 
 import {
     configureChains,
@@ -44,6 +44,8 @@ const ethereumClient = new EthereumClient(wagmiClient, chains)
 
 
 export default function NavBar() {
+    const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
+    const { address, isConnected } = useAccount('')
 
     return (
         <WagmiConfig client={wagmiClient}>
@@ -54,7 +56,15 @@ export default function NavBar() {
                         <div className='flex pr-10 items-center justify-center'>
                             <Image src="/logo.svg" alt="logo" width={163} height={70} className="mr-12" />
                         </div>
-                        <WalletButton />
+                        {
+                            isConnected ? (
+                                <div className='flex flex-row items-center text-[1vw] font-[500] pr-[10vh] gap-x-[1vw]'>
+                                    <div className='relative h-[3vw] w-[3vw]'>
+                                        <Image src="/Profile.png" fill />
+                                    </div>
+                                    <p>Himanshu</p>
+                                </div>) : <WalletButton />
+                        }
                     </div>
 
                 </nav>
