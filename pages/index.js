@@ -22,7 +22,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden caret-transparent">
         <div className="flex flex-1 flex-row justify-end h-screen ">
           <div className="flex flex-1 flex-col items-center">
             <p
@@ -71,7 +71,7 @@ export default function Home() {
           <div>
             <Sidebar />
           </div>
-          <div className="flex border-2 h-[80vh]">
+          <div className="flex  w-full">
             <FrameSmallTikcets />
           </div>
         </div>
