@@ -17,10 +17,10 @@ import {
 
 export default function WalletButton() {
   const { address, isConnected } = useAccount()
-  const { data: ensName } = useEnsName({ address })
-  const { connect } = useConnect({
-    connector: new InjectedConnector(),
-  })
+  // const { data: ensName } = useEnsName({ address })
+  // const { connect } = useConnect({
+  //   connector: new InjectedConnector(),
+  // })
   if (isConnected) return <div>Connected to {ensName ?? address}</div>
   return (
     <button
