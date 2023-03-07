@@ -53,8 +53,10 @@ export default function NavBar() {
             <header>
                 <nav className="flex items-center justify-between flex-wrap p-6">
                     <div className="flex items-center flex-1 justify-between ">
-                        <div className='flex pr-10 items-center justify-center'>
-                            <Image src="/logo.svg" alt="logo" width={163} height={70} className="mr-12" />
+                        <div className='flex items-center justify-center'>
+                            <div className='relative h-[5vw] w-[7vw]'>
+                                <Image src="/logo.svg" alt="logo" fill className="mr-12" />
+                            </div>
                         </div>
                         {
                             isConnected ? (

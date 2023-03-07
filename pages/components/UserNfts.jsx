@@ -1,14 +1,15 @@
 'use client'
 import { useEffect, useState } from "react"
 import Image from "next/image"
+import { Link, Element } from 'react-scroll';
 async function getNFTs({ walletAddress }) {
     console.log(walletAddress)
     // const baseURL =
     //   'https://eth-goerli.g.alchemy.com/v2/7-Yea8uVN6TmlCf1IoGyed6T47GpqI4W'
-    // const address = walletAddress
+    const address = walletAddress
     const baseURL =
         'https://eth-mainnet.g.alchemy.com/v2/_pI4M8h8oFOeo2dEpkvZvQK41y-jrRKc'
-    const address = 'elanhalpern.eth'
+    // const address = 'elanhalpern.eth'
     const url = `${baseURL}/getNFTs/?owner=${address}`
 
     var requestOptions = {
@@ -68,6 +69,11 @@ export default function UserNfts({ walletAddress }) {
                     }
                     )
                 }
+            </div>
+            <div className="mt-5">
+                <Link to="Coupons" smooth={true} duration={500} className="flex h-[10vh] w-[19vh] relative">
+                    <Image src="/ExploreLatestDeals.svg" fill />
+                </Link>
             </div>
         </div>
     )

@@ -3,6 +3,7 @@ import SupportedNfts from './components/Home/SupportedNfts'
 import CouponSection from './components/Home/CouponSection'
 import HowToCoupons from './components/Home/HowToCoupons'
 import LandingSection from './components/Home/LandingSection'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
       <div className="overflow-x-hidden caret-transparent">
         <LandingSection />
         <HowToCoupons />
-        <CouponSection />
+        <CouponSection  />
         <SupportedNfts />
+        <Footer />
       </div>
     </>
   )
