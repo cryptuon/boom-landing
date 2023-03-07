@@ -3,7 +3,7 @@ import SmallTicket from './SmallTicket'
 import { useState } from 'react'
 import SmallTicketDetails from './SmallTicketsDetails'
 export default function FrameSmallTikcets() {
-  const [number, setNumber] = useState([1, 2, 3, 4 ])
+  const [number, setNumber] = useState([1, 2, 3, 4 , 5, 6, 7, 8 ,9 ])
   const [selected, setSelected] = useState()
   return (
     <div className="flex flex-row justify-between w-full h-[48vh] ">
