@@ -7,7 +7,7 @@ const luckiestGuy = Luckiest_Guy({
 })
 export default function SupportedNfts() {
     return (
-        <div className="flex flex-1 flex-row mt-10 justify-evenly items-center h-screen">
+        <div className="flex flex-1 flex-row mt-10 px-[10vw] justify-between items-center h-screen">
           <div className="flex flex-col">
             <p
               className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight `}

@@ -14,18 +14,26 @@ export default function LandingSection() {
   return (
     <div className="flex flex-1 flex-row justify-end h-screen">
       {isConnected ? (
-        <div className="flex flex-1 flex-col pl-40 pt-24">
+        <div className="flex flex-1 flex-col pl-[10vw] pt-24">
           <p
             className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight `}
           >
             Hey
           </p>
-          <p
+          <div className="flex w-fit items-center justify-center">
+            <input
+              className={`${luckiestGuy.variable} font-display border-none text-[4.5vw] caret-[#9F9F9F] text-[#9F9F9F] animate-blinkCaret`}
+              autoFocus
+              size="10"
+              placeholder={`${address.slice(0, 9)}...`}
+            />
+          </div>
+          {/* <p
             className={`${luckiestGuy.variable} font-display text-[4.5vw] text-[#9F9F9F] leading-tight truncate`}
           >
             {address.slice(0, 9)}...
-          </p>
-          <UserNfts walletAddress={address}/>
+          </p> */}
+          <UserNfts walletAddress={address} />
         </div>
       ) : (
         <div className="flex flex-1 flex-col items-center">

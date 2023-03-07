@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { BiCopy } from 'react-icons/bi'
 export default function SmallTicketDetails({ number, link }) {
   return (
-    <div className="pl-3">
+    <div>
+
       {number ? (
         <div className="bg-[url('/SmallTicketDetailsOutline.svg')] bg-no-repeat bg-contain bg-center w-[14.22vw] h-[30vw]">
           <div className="flex flex-col justify-center h-full px-[1vw]">
@@ -34,7 +35,7 @@ export default function SmallTicketDetails({ number, link }) {
                 onClick={() => window.open('https:/google.com')}
                 className="flex flex-row justify-around items-center h-fit m-4 border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
               >
-                <p className="text-[2vw] font-[700] mb-[0.1vw]">Avail</p>
+                <p className="text-[2vw] font-[700] mb-[0.1vw]">Avail Offer</p>
               </div>
             ) : (
               <div className="flex flex-row justify-around items-center h-fit m-4 border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer ">
