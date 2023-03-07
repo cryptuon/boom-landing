@@ -1,82 +1,34 @@
 import Image from 'next/image'
-// import logo from '/logo.svg'
-// import filter from '/filter.svg'
-import {
-    EthereumClient,
-    modalConnectors,
-    walletConnectProvider,
-} from '@web3modal/ethereum'
-
-import { Web3Modal, useWeb3Modal } from '@web3modal/react'
-
-import {
-    configureChains,
-    createClient,
-    WagmiConfig,
-    useAccount,
-    useConnect,
-    useEnsName,
-} from 'wagmi'
-
-import { arbitrum, mainnet, polygon } from 'wagmi/chains'
-
 import WalletButton from './WalletConnectButton'
 
-const chains = [arbitrum, mainnet, polygon]
-
-// Wagmi client
-const { provider } = configureChains(chains, [
-    walletConnectProvider({ projectId: 'bd46fa8128fb1ebc5d7b0b8b6ea44682' }),
-])
-const wagmiClient = createClient({
-    autoConnect: false,
-    connectors: modalConnectors({
-        projectId: 'bd46fa8128fb1ebc5d7b0b8b6ea44682',
-        version: '1', // or "2"
-        appName: 'web3Modal',
-        chains,
-    }),
-    provider,
-})
-
-// Web3Modal Ethereum Client
-const ethereumClient = new EthereumClient(wagmiClient, chains)
-
+import { configureChains, createClient, WagmiConfig, useAccount, useConnect, useEnsName } from 'wagmi'
 
 export default function NavBar() {
-    const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
     const { address, isConnected } = useAccount('')
-
     return (
-        <WagmiConfig client={wagmiClient}>
 
-            <header>
-                <nav className="flex items-center justify-between flex-wrap p-6">
-                    <div className="flex items-center flex-1 justify-between ">
-                        <div className='flex items-center justify-center'>
-                            <div className='relative h-[5vw] w-[7vw]'>
-                                <Image src="/logo.svg" alt="logo" fill className="mr-12" />
-                            </div>
+        <header>
+            <nav className="flex items-center justify-between flex-wrap p-6">
+                <div className="flex items-center flex-1 justify-between ">
+                    <div className='flex items-center justify-center'>
+                        <div className='relative h-[5vw] w-[7vw]'>
+                            <Image src="/logo.svg" alt="logo" fill className="mr-12" />
                         </div>
-                        {
-                            isConnected ? (
-                                <div className='flex flex-row items-center text-[1vw] font-[500] pr-[10vh] gap-x-[1vw]'>
-                                    <div className='relative h-[3vw] w-[3vw]'>
-                                        <Image src="/Profile.png" fill />
-                                    </div>
-                                    <p>Himanshu</p>
-                                </div>) : <WalletButton />
-                        }
                     </div>
+                    {
+                        isConnected ? (
+                            <div className='flex flex-row items-center text-[1vw] font-[500] pr-[10vh] gap-x-[1vw]'>
+                                <div className='relative h-[3vw] w-[3vw]'>
+                                    <Image src="/Profile.png" fill />
+                                </div>
+                                <p>Himanshu</p>
+                            </div>) : <WalletButton />
+                    }
+                </div>
 
-                </nav>
-            </header >
+            </nav>
+        </header >
 
-            <Web3Modal
-                projectId="bd46fa8128fb1ebc5d7b0b8b6ea44682"
-                ethereumClient={ethereumClient}
-            />
-        </WagmiConfig>
 
     );
 }

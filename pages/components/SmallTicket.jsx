@@ -1,5 +1,3 @@
-// @refresh reset
-
 import Image from 'next/image'
 // import TicketOutline from '/TicketOutline.svg'
 
