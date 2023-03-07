@@ -30,10 +30,19 @@ module.exports = {
           // '80%': { transform: 'translate(-13px,-13px) ' },
           '100%': { transform: 'translate(0px,0px) ' },
         },
+        blinkCaret: {
+          'from, to': {
+            'border-color': 'transparent',
+          },
+          '50%': {
+            'border-color': 'black',
+          },
+        },
       },
       animation: {
         wiggle: 'in 0.75s ease-out forwards',
         wiggleOut: 'out 0.5s ease-in forwards',
+        blinkCaret: '1s blinkCaret infinite',
       },
       fontFamily: {
         display: ['var(--font-luckiestGuy)', ...defaultTheme.fontFamily.sans],
