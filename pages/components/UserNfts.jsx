@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Link, Element } from 'react-scroll';
+import ExploreDealsButton from "./ExploreDealsButton";
 async function getNFTs({ walletAddress }) {
     console.log(walletAddress)
     // const baseURL =
@@ -71,9 +72,7 @@ export default function UserNfts({ walletAddress }) {
                 }
             </div>
             <div className="mt-5">
-                <Link to="Coupons" smooth={true} duration={500} className="flex h-[10vh] w-[19vh] relative">
-                    <Image src="/ExploreLatestDeals.svg" fill />
-                </Link>
+                <ExploreDealsButton />
             </div>
         </div>
     )

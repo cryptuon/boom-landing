@@ -3,8 +3,41 @@ import Image from 'next/image'
 
 export default function SmallTicket({number}) {
     return (
-            <div className="flex bg-[url('/SmallTicketOutlineBlack.svg')] bg-no-repeat bg-contain bg-center w-[10.5vmax] h-[11vmax]">
-                <div className="bg-[url('/SmallTicketOutline.svg')] bg-no-repeat bg-contain bg-center w-[10.5vmax] h-[11vmax] animate-wiggleOut hover:animate-wiggle ">
+            <div className="flex bg-[url('/SmallTicketOutlineBlack.svg')] bg-no-repeat bg-contain bg-center w-[17vmax] h-[17vmax] md:w-[11vmax] md:h-[12vmax]">
+                <div className="bg-[url('/SmallTicketOutline.svg')] bg-no-repeat bg-contain bg-center w-[17vmax] h-[17vmax] md:w-[11vmax] md:h-[12vmax] animate-wiggleOut hover:animate-wiggle ">
+                    <div className="flex flex-col justify-center h-full px-[1vmax] ">
+                        <div className="flex items-center justify-center h-[8vmax] md:h-[4.6vmax] ">
+                            <div className='w-[17vmax] h-[5vmax] md:w-[12vmax] md:h-[3vmax] relative  '>
+                                <Image src='/polygonBanner.png' alt="logo" fill />
+                            </div>
+                        </div>
+                        <div className='flex flex-1 justify-evenly flex-col'>
+                            <div className='flex flex-col overflow-hidden '>
+                                <p className="text-sm font-[700] mb-[0.1vmax]">{number}0% OFF</p>
+                                <p className="text-xs font-[500]">Get off on the whole company. We are going bankrupt beca..... </p>
+                            </div>
+                            <div className='flex flex-row justify-between items-center '>
+                                <p className="text-xs font-[500]">3254</p>
+                                <div className='flex border-2 h-[1vmax] w-[5vmax] md:h-[0.5vmax] md:w-[2.5vmax] border-black rounded-2xl items-center justify-end'>
+                                    <div className='bg-red-600 h-[0.6vmax] w-[2.2vmax] md:h-[0.3vmax] md:w-[1.1vmax] rounded-2xl'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    )
+}
+
+
+/*
+import Image from 'next/image'
+// import TicketOutline from '/TicketOutline.svg'
+
+export default function SmallTicket({number}) {
+    return (
+            <div className="flex bg-[url('/SmallTicketOutlineBlack.svg')] bg-no-repeat bg-contain bg-center w-[17vmax] h-[17vmax] md:w-[11vmax] md:h-[12vmax]">
+                <div className="bg-[url('/SmallTicketOutline.svg')] bg-no-repeat bg-contain bg-center w-[17vmax] h-[17vmax] md:w-[11vmax] md:h-[12vmax] animate-wiggleOut hover:animate-wiggle ">
                     <div className="flex flex-col justify-center h-full px-[1vmax] ">
                         <div className="flex items-center justify-center h-[4.6vmax] ">
                             <div className='w-[12vmax] h-[3vmax] relative  '>
@@ -28,3 +61,5 @@ export default function SmallTicket({number}) {
             </div>
     )
 }
+
+*/

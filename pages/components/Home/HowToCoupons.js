@@ -9,7 +9,7 @@ const luckiestGuy = Luckiest_Guy({
 })
 export default function HowToCoupons() {
     return (
-        <div className="flex flex-1 h-fit flex-col md:flex-row mt-10 justify-evenly items-center md:h-screen" id="howto">
+        <div className="flex flex-1 h-fit flex-col md:flex-row my-36 md:my-0 justify-evenly items-center md:h-screen" id="howto">
           <div className="flex flex-col gap-y-5 order-2 md:order-1">
             <div className="flex flex-row justify-end items-end ">
               <SmallTicket />

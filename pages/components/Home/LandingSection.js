@@ -9,6 +9,7 @@ const luckiestGuy = Luckiest_Guy({
 import WalletButton from '../WalletConnectButton'
 import { useAccount } from 'wagmi'
 import UserNfts from '../UserNfts'
+import ExploreDealsButton from '../ExploreDealsButton'
 export default function LandingSection() {
   const { address, isConnected } = useAccount('')
 
@@ -24,7 +25,7 @@ export default function LandingSection() {
             </p>
             <div className=" flex items-center md:items-start md:justify-start justify-center">
               <input
-                className={`${luckiestGuy.variable} border-black text-center md:text-start font-display border-none text-4xl xl:text-8xl xl:leading-tight caret-[#9F9F9F] placeholder:text-[#9F9F9F]`}
+                className={`${luckiestGuy.variable} border-black text-center md:text-start font-display border-none text-4xl xl:text-8xl xl:leading-tight caret-unselected-gray placeholder:text-unselected-gray`}
                 size="10"
                 placeholder={`${address.slice(0, 9)}...`}
               />
@@ -44,7 +45,7 @@ export default function LandingSection() {
             </p>
             <div className="flex flex-col items-center  gap-5 mt-5 md:m-0">
               <div className="md:hidden">
-                <WalletButton />
+                <ExploreDealsButton />
               </div>
               <div className="h-[8vmax] w-[8vmax] relative ">
                 <Image

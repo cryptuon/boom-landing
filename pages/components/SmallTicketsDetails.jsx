@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { BiCopy } from 'react-icons/bi'
-export default function SmallTicketDetails({ number, link }) {
+export default function SmallTicketDetails({ number, link, showSelected, setShowSelected }) {
   return (
     <div>
 
-      {number ? (
-        <div className="bg-[url('/SmallTicketDetailsOutline.svg')] bg-no-repeat bg-contain bg-center w-[14.22vmax] h-[30vmax]">
+      {showSelected ? (
+        <div 
+        onClick={() => setShowSelected(false)}
+        className="bg-[url('/SmallTicketDetailsOutline.svg')] bg-no-repeat bg-contain bg-center w-[14.22vmax] h-[30vmax] animate-wiggle">
           <div className="flex flex-col justify-center h-full px-[1vmax]">
             <div className="flex items-center justify-center h-[7.17vmax] ">
               <div className="relative w-full h-[4.6vmax]  ">
@@ -35,7 +37,7 @@ export default function SmallTicketDetails({ number, link }) {
                 onClick={() => window.open('https:/google.com')}
                 className="flex flex-row justify-around items-center h-fit m-4 border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
               >
-                <p className="text-[2vmax] font-[700] mb-[0.1vmax]">Avail Offer</p>
+                <p className="text-xs font-[700] mb-[0.1vmax]">Avail Offer</p>
               </div>
             ) : (
               <div className="flex flex-row justify-around items-center h-fit m-4 border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer ">
@@ -46,7 +48,7 @@ export default function SmallTicketDetails({ number, link }) {
           </div>
         </div>
       ) : (
-        <div className="bg-[url('/SmallTicketsDetailsNone.svg')] bg-no-repeat bg-contain bg-center w-[14.22vmax] h-[30vmax]" />
+        <div className="bg-[url('/SmallTicketsDetailsNone.svg')] bg-no-repeat bg-contain bg-center w-[14.22vmax] h-[30vmax] hidden md:block" />
       )}
     </div>
   )
