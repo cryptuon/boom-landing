@@ -9,21 +9,21 @@ const luckiestGuy = Luckiest_Guy({
 })
 export default function HowToCoupons() {
     return (
-        <div className="flex flex-1 flex-row mt-10 justify-evenly items-center h-screen" id="howto">
-          <div className="flex flex-col gap-y-5">
+        <div className="flex flex-1 h-fit flex-col md:flex-row mt-10 justify-evenly items-center md:h-screen" id="howto">
+          <div className="flex flex-col gap-y-5 order-2 md:order-1">
             <div className="flex flex-row justify-end items-end ">
               <SmallTicket />
-              <div className="relative h-[13vw] w-[13vw]">
+              <div className="relative h-[13vmax] w-[13vmax]">
                 <Image src="./free.svg" fill className="ml-5 justify-end" />
               </div>
             </div>
             <Ticket />
           </div>
-          <div>
+          <div className="order-2 md:order-1 ">
             <p
-              className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight `}
-            >
-              How to <br />
+              className={`${luckiestGuy.variable} font-display text-center md:text-start text-4xl xl:text-8xl xl:leading-tight pt-24`}
+              >
+              How to <br className="hidden md:block"/>
               Get
               <br />
               Coupons

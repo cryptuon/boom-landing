@@ -17,7 +17,7 @@ export default function LandingSection() {
       <div className="order-2 md:order-1 md:pl-48">
         {isConnected ? (
           <div className="flex flex-1 flex-col items-center md:items-start h-fit w-fit ">
-          <p
+            <p
               className={`${luckiestGuy.variable} font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
             >
               Hey
@@ -32,7 +32,7 @@ export default function LandingSection() {
             <UserNfts walletAddress={address} />
           </div>
         ) : (
-          <div className="flex flex-1 flex-col items-center h-fit pr-56">
+          <div className="flex flex-1 flex-col text-center items-center md:text-start h-fit md:pr-[11.6vw]">
             <p
               className={`${luckiestGuy.variable} font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
             >
@@ -42,18 +42,18 @@ export default function LandingSection() {
               offers <br className="hidden md:block" />
               NOW
             </p>
-            <div className='flex flex-col items-center gap-5 mt-5 md:m-0'>
-              <div className='md:hidden'>
+            <div className="flex flex-col items-center  gap-5 mt-5 md:m-0">
+              <div className="md:hidden">
                 <WalletButton />
               </div>
-            <div className="h-[8vmax] w-[8vmax] relative ">
-              <Image
-                src="./bubbles.svg"
-                fill
-                className="z-[10] md:translate-x-20 md:-translate-y-5 "
-              />
+              <div className="h-[8vmax] w-[8vmax] relative ">
+                <Image
+                  src="./bubbles.svg"
+                  fill
+                  className="z-[10] md:translate-x-20 md:-translate-y-5 "
+                />
+              </div>
             </div>
-          </div>
           </div>
         )}
       </div>
