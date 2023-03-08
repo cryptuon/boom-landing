@@ -6,58 +6,60 @@ const luckiestGuy = Luckiest_Guy({
   weight: '400',
   variable: '--font-luckiestGuy',
 })
+import WalletButton from '../WalletConnectButton'
 import { useAccount } from 'wagmi'
 import UserNfts from '../UserNfts'
 export default function LandingSection() {
   const { address, isConnected } = useAccount('')
 
   return (
-    <div className="flex flex-1 flex-row justify-end h-screen">
-      {isConnected ? (
-        <div className="flex flex-1 flex-col pl-[10vw] pt-24">
+    <div className="flex flex-col h-fit items-center md:flex-row md:items-start justify-between md:h-screen">
+      <div className="order-2 md:order-1 md:pl-48">
+        {isConnected ? (
+          <div className="flex flex-1 flex-col items-center md:items-start h-fit w-fit ">
           <p
-            className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight `}
-          >
-            Hey
-          </p>
-          <div className="flex w-fit items-center justify-center">
-            <input
-              className={`${luckiestGuy.variable} font-display border-none text-[4.5vw] caret-[#9F9F9F] text-[#9F9F9F] animate-blinkCaret`}
-              autoFocus
-              size="10"
-              placeholder={`${address.slice(0, 9)}...`}
-            />
+              className={`${luckiestGuy.variable} font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
+            >
+              Hey
+            </p>
+            <div className=" flex items-center md:items-start md:justify-start justify-center">
+              <input
+                className={`${luckiestGuy.variable} border-black text-center md:text-start font-display border-none text-4xl xl:text-8xl xl:leading-tight caret-[#9F9F9F] placeholder:text-[#9F9F9F]`}
+                size="10"
+                placeholder={`${address.slice(0, 9)}...`}
+              />
+            </div>
+            <UserNfts walletAddress={address} />
           </div>
-          {/* <p
-            className={`${luckiestGuy.variable} font-display text-[4.5vw] text-[#9F9F9F] leading-tight truncate`}
-          >
-            {address.slice(0, 9)}...
-          </p> */}
-          <UserNfts walletAddress={address} />
-        </div>
-      ) : (
-        <div className="flex flex-1 flex-col items-center">
-          <p
-            className={`${luckiestGuy.variable} font-display text-[4.5vw] leading-tight pt-24`}
-          >
-            Get
-            <br />
-            Amazing
-            <br />
-            offers
-            <br />
-            NOW
-          </p>
-          <div className="h-[4vw] w-[4vw] relative">
-            <Image
-              src="./bubbles.svg"
-              fill
-              className="z-[10] translate-x-20 -translate-y-5 "
-            />
+        ) : (
+          <div className="flex flex-1 flex-col items-center h-fit pr-56">
+            <p
+              className={`${luckiestGuy.variable} font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
+            >
+              Get <br className="hidden md:block" />
+              Amazing
+              <br />
+              offers <br className="hidden md:block" />
+              NOW
+            </p>
+            <div className='flex flex-col items-center gap-5 mt-5 md:m-0'>
+              <div className='md:hidden'>
+                <WalletButton />
+              </div>
+            <div className="h-[8vmax] w-[8vmax] relative ">
+              <Image
+                src="./bubbles.svg"
+                fill
+                className="z-[10] md:translate-x-20 md:-translate-y-5 "
+              />
+            </div>
           </div>
-        </div>
-      )}
-      <FrameTickets />
+          </div>
+        )}
+      </div>
+      <div className="order-1 md:order-1 h-fit pt-12 w-full">
+        <FrameTickets />
+      </div>
     </div>
   )
 }

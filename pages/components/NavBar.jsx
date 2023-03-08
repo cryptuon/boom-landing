@@ -10,15 +10,13 @@ export default function NavBar() {
         <header>
             <nav className="flex items-center justify-between flex-wrap p-6">
                 <div className="flex items-center flex-1 justify-between ">
-                    <div className='flex items-center justify-center'>
-                        <div className='relative h-[5vw] w-[7vw]'>
-                            <Image src="/logo.svg" alt="logo" fill className="mr-12" />
-                        </div>
+                    <div className='relative h-[7vh] w-[15vh]'>
+                        <Image src="/logo.svg" alt="logo" fill className="mr-12" />
                     </div>
                     {
                         isConnected ? (
-                            <div className='flex flex-row items-center text-[1vw] font-[500] pr-[10vh] gap-x-[1vw]'>
-                                <div className='relative h-[3vw] w-[3vw]'>
+                            <div className='flex flex-row items-center text-sm md:text-xl font-[500] gap-x-[1vw]'>
+                                <div className='relative h-[5vh] w-[5vh]'>
                                     <Image src="/Profile.png" fill />
                                 </div>
                                 <p>Himanshu</p>

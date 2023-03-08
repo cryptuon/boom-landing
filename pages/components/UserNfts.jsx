@@ -56,9 +56,9 @@ export default function UserNfts({ walletAddress }) {
         fetchNFTs();
     }, [walletAddress]);
     return (
-        <div className='mt-10 flex flex-col text-[1vw] font-[500] pr-[10vh] gap-x-[1vw]'>
-            <p>Welcome to the amazing <br />community of</p>
-            <div className="flex flex-row gap-4 pt-3">
+        <div className='mt-10 flex flex-col text-center justify-center items-center md:items-start md:text-start text-xl xl:text-2xl xl:leading-tight font-[700] gap-x-[1vw]'>
+            <p>Welcome to the amazing <br className="hidden md:block"/>community of</p>
+            <div className="flex flex-row pt-3">
                 {
                     nfts.map((nft, index) => {
                         return (
