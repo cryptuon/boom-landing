@@ -5,7 +5,7 @@ import HowToCoupons from './components/Home/HowToCoupons'
 import LandingSection from './components/Home/LandingSection'
 import Footer from './components/Footer'
 
-export default function Home() {
+export default function Home({setUser}) {
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="overflow-x-hidden caret-transparent">
-        <LandingSection />
+        <LandingSection setUser={setUser}/>
         <HowToCoupons />
         <CouponSection  />
         <SupportedNfts />

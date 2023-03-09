@@ -3,14 +3,14 @@ import WalletButton from './WalletConnectButton'
 
 import { configureChains, createClient, WagmiConfig, useAccount, useConnect, useEnsName } from 'wagmi'
 
-export default function NavBar() {
+export default function NavBar({ user }) {
     const { address, isConnected } = useAccount('')
     return (
 
         <header>
             <nav className="flex items-center justify-between flex-wrap p-6">
                 <div className="flex items-center flex-1 justify-between ">
-                    <div className='relative h-[7vh] w-[15vh]'>
+                    <div className='relative h-[8vh] w-[8.5vw]'>
                         <Image src="/logo.svg" alt="logo" fill className="mr-12" />
                     </div>
                     {
@@ -19,7 +19,11 @@ export default function NavBar() {
                                 <div className='relative h-[5vh] w-[5vh]'>
                                     <Image src="/Profile.png" fill />
                                 </div>
-                                <p>Himanshu</p>
+                                <p>{
+                                    user ? (user == address ?
+                                        address.slice(0, 6) + '...' + address.slice(-4) : user  
+                                    ) : address.slice(0, 6) + '...' + address.slice(-4)
+                                }</p>
                             </div>) : <WalletButton />
                     }
                 </div>

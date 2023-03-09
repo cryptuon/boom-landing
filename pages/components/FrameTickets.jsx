@@ -23,7 +23,7 @@ export default function FrameTickets() {
   }, []);
 
   return (
-    <div className="flex flex-col items-end w-full md:pt-16 md:w-fit md:-ml-20 md:translate-y-10 md:translate-x-80 translate-x-20 rotate-12 md:rotate-[30deg]">
+    <div className="flex flex-col items-end w-full md:pt-24 md:w-fit md:-ml-20 md:translate-y-10 md:translate-x-80 translate-x-20 rotate-12 md:rotate-[30deg]">
         <div className="relative mr-20 md:mr-96 w-[13vh] h-[13vh] mb-[-4vh]">
           <Image
             src="/semiCircleGraphic.svg"

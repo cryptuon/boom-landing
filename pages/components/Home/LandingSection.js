@@ -10,7 +10,7 @@ import WalletButton from '../WalletConnectButton'
 import { useAccount } from 'wagmi'
 import UserNfts from '../UserNfts'
 import ExploreDealsButton from '../ExploreDealsButton'
-export default function LandingSection() {
+export default function LandingSection({setUser}) {
   const { address, isConnected } = useAccount('')
 
   return (
@@ -28,6 +28,7 @@ export default function LandingSection() {
                 className={`${luckiestGuy.variable} border-black text-center md:text-start font-display border-none text-4xl xl:text-8xl xl:leading-tight caret-unselected-gray placeholder:text-unselected-gray`}
                 size="10"
                 placeholder={`${address.slice(0, 9)}...`}
+                onChange={(e) => setUser(e.target.value)}
               />
             </div>
             <UserNfts walletAddress={address} />
