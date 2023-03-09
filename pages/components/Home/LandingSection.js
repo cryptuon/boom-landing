@@ -44,11 +44,11 @@ export default function LandingSection({setUser}) {
               offers <br className="hidden md:block" />
               NOW
             </p>
-            <div className="flex flex-col items-center  gap-5 mt-5 md:m-0">
-              <div className="md:hidden">
+            <div className="flex flex-col md:flex-row items-center  gap-5 mt-5 md:m-0">
+              <div className="">
                 <ExploreDealsButton />
               </div>
-              <div className="h-[8vmax] w-[8vmax] relative ">
+              <div className="h-[7vmax] w-[7vmax] relative ">
                 <Image
                   src="./bubbles.svg"
                   fill
@@ -59,7 +59,7 @@ export default function LandingSection({setUser}) {
           </div>
         )}
       </div>
-      <div className="order-1 md:order-1 h-fit pt-12 w-full overflow-hidden">
+      <div className="order-1 md:order-1 h-fit pt-12 w-full">
         <FrameTickets />
       </div>
     </div>

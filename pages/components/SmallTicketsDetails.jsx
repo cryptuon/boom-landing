@@ -11,7 +11,7 @@ export default function SmallTicketDetails({ number, link, showSelected, setShow
         <div 
         
         className="border-2 border-black rounded-lg bg-white w-[60vw] md:w-[14.22vmax] h-max md:h-[30vmax] md:animate-wiggle">
-          <AiOutlineCloseCircle onClick={() => setShowSelected(false)} className="md:hidden text-[2vmax] font-[700] mb-[0.1vmax] absolute right-0 top-0 m-2" />
+          <AiOutlineCloseCircle onClick={() => setShowSelected(false)} className="md:hidden text-[4vmax] font-[700] mb-[0.1vmax] absolute right-0 top-0 m-2" />
           <div className="flex flex-col justify-center h-full px-[1vmax]">
             <div className="flex items-center justify-center h-[10vh] md:h-[7.17vmax] ">
               <div className="relative w-full h-[10vh] md:h-[4.6vmax]  ">

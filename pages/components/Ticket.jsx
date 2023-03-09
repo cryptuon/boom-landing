@@ -24,7 +24,7 @@ export default function Ticket({ className, bg }) {
                             <p className="text-[0.7vmax] font-medium md:text-xm">3254</p>
                         </div>
                     </div>
-                    <div className="flex items-center justify-center py-[1vmax] h-full w-[9vmax] px-[3.5vmax] ">
+                    <div className="flex items-center justify-center py-[1vmax] h-full w-[9vmax] px-[3.5vmax]">
                         <p className="text-[2vmax] font-bold transform -rotate-90 md:text-sm">AL3LD3</p>
                     </div>
                 </div>
