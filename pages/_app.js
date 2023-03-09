@@ -40,17 +40,18 @@ export default function App({ Component, pageProps }) {
   const { pathname } = router
   const isHome = pathname === '/'
   const isWallet = pathname === '/Wallet'
+  const isVerify = pathname === '/Verify'
 
   const { address, isConnected } = useAccount('')
   const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    if (isConnected) {
-      setUser(address)
-    }
-  }, [isConnected])
+  // useEffect(() => {
+  //   if (isConnected) {
+  //     setUser(address)
+  //   }
+  // }, [isConnected])
 
-  if (isWallet) {
+  if (isWallet || isVerify) {
     return <Component {...pageProps} />
   }
   return (

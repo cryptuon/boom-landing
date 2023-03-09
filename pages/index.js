@@ -4,8 +4,34 @@ import CouponSection from './components/Home/CouponSection'
 import HowToCoupons from './components/Home/HowToCoupons'
 import LandingSection from './components/Home/LandingSection'
 import Footer from './components/Footer'
+import { useEffect, useState } from 'react'
+import Router from 'next/router'
+import { useAccount } from 'wagmi'
+export default function Home({ setUser }) {
+  const { address, isConnected } = useAccount('')
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    if (isConnected) {
+      setUser(address)
+      let checkwallet = async () => {
+        setLoading(true)
+        let response = await fetch('/api/checkWalletinDB', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ walletAddress: address }),
+        })
+        let data = await response.json()
+        setLoading(false)
+        if (data.wallet == 'new' || data.wallet == 'unverified') {
+          Router.push('/Wallet')
+        }
+      }
+      checkwallet()
+    }
+  }, [isConnected, loading])
 
-export default function Home({setUser}) {
   return (
     <>
       <Head>
@@ -14,16 +40,17 @@ export default function Home({setUser}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="overflow-x-hidden caret-transparent">
-        <LandingSection setUser={setUser}/>
+      <div
+        className={`overflow-x-hidden caret-transparent 
+      ${loading} ? 'blur-sm' : ''
+      `}
+      >
+        <LandingSection setUser={setUser} />
         <HowToCoupons />
-        <CouponSection  />
+        <CouponSection />
         <SupportedNfts />
         <Footer />
       </div>
     </>
   )
 }
-
-
-

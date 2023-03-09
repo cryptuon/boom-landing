@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Head from 'next/head'
+import { useState } from 'react'
 import { Butcherman, Cormorant_SC, Luckiest_Guy } from '@next/font/google'
 const luckiestGuy = Luckiest_Guy({
   subsets: ['latin'],
@@ -18,7 +19,7 @@ import {
 } from 'wagmi'
 
 import { useWeb3Modal } from '@web3modal/react'
-
+import Router from 'next/router'
 async function getNFTs() {
   // console.log("fetching NFTs")
   const baseURL =
@@ -53,6 +54,7 @@ async function getNFTs() {
 
 export default function Wallet({walletAddress}) {
   const { address, isConnected } = useAccount('')
+  const [email, setEmail] = useState('')
 
   return (
     <>
@@ -98,7 +100,21 @@ export default function Wallet({walletAddress}) {
             <div className="flex flex-col mt-5 font-semibold">
               <p className="text-lg">Email address</p>
               <div className="flex flex-row gap-x-3 ">
-                <input className="border-2 border-black rounded-lg" />
+                <input className="border-2 border-black rounded-lg" 
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button className="border-2 border-black rounded-lg w-24 text-center hover:bg-boom-yellow"
+                  onClick={() => {
+                    // console.log(email)
+                    addEmailToWallet({email, address}).then((data) => {
+                      console.log(data)
+                      Router.push('/Verify?email='+email+'&address='+address, '/Verify',)
+                    })
+
+                  }}
+                >
+                  Verify
+                </button>
               </div>
             </div>
           </div>
@@ -114,4 +130,28 @@ export default function Wallet({walletAddress}) {
       </div>
     </>
   )
+}
+
+
+async function addEmailToWallet({address,email}){
+  // console.log(email)
+  let text = 'Your OTP is: '
+  let response = await fetch('/api/sendOTPtoEmail', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({email, text}),
+  })
+  let data = await response.json()
+
+  response = await fetch('/api/addEmailToWallet', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({address,email}),
+  })
+  data = await response.json()
+  return data
 }
