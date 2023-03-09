@@ -7,8 +7,10 @@ export default function FrameSmallTikcets() {
   const [selected, setSelected] = useState()
   const [showSelected, setShowSelected] = useState(false)
   return (
-    <div className=" flex flex-row justify-between w-full h-[48vh] ">
-      <div className='flex flex-col  w-full justify-center items-center '>
+    <div className={` flex flex-row justify-between w-full h-[48vh]  `}>
+            {/* className={`${showSelected ? 'blur md:blur-none touch-none' : 'none'}`} */}
+
+      <div className={`flex flex-col  w-full justify-center items-center ${showSelected ? 'blur md:blur-none touch-none' : 'none'}`}>
         <div className="
                     w-fit 
                     grid grid-cols-2 md:grid-cols-3
@@ -17,7 +19,9 @@ export default function FrameSmallTikcets() {
                     px-5 
                     overflow-y-auto overflow-x-hidden no-scrollbar ">
           {number.map((number) => (
-            <div onClick={
+            <div 
+            // className='blur'
+            onClick={
               () => {
                 setSelected(number)
                 setShowSelected(true)
@@ -28,7 +32,7 @@ export default function FrameSmallTikcets() {
           ))}
         </div>
       </div>
-      <div className='flex pt-3 absolute -mx-[10vw] md:mx-0 md:w-fit w-full justify-center items-center md:items-start md:justify-start md:relative '>
+      <div className=' flex pt-3 absolute -mx-[10vw] md:mx-0 md:w-fit w-full justify-center items-center md:items-start md:justify-start md:relative '>
         <SmallTicketDetails number={selected} link={true} showSelected={showSelected} setShowSelected={setShowSelected} />
       </div>
     </div>

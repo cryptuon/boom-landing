@@ -1,10 +1,11 @@
 import Image from 'next/image'
+import { useEffect } from 'react'
 
-export default function Ticket() {
+export default function Ticket({ className, bg }) {
     return (
-        <div className=" flex mx-1  bg-[url('/TicketOutlineBlack.svg')] bg-no-repeat bg-contain w-[27vmax] h-[10vmax]">
-            <div className="bg-[url('/TicketOutline.svg')]  bg-no-repeat bg-contain w-[27vmax] h-[10vmax] animate-wiggleOut 
-                            hover:animate-wiggle hover:bg-[url('/TicketOutlineYellow.svg')]">
+        <div id="ticket" className="flex mx-1 bg-no-repeat bg-contain w-[27vmax] h-[10vmax]">
+            <div className={`bg-no-repeat bg-contain w-[27vmax] h-[10vmax] animate-wiggleOut  ${bg} ${className} `}>
+                {/* hover:animate-wiggle hover:bg-[url('/TicketOutlineYellow.svg')]`}> */}
                 <div className="flex flex-row items-center justify-center h-full ">
                     <div className="flex items-center justify-center h-full">
                         <div className="flex flex-col items-center justify-between py-[1.25vmax] pl-[2vmax] h-full ">
@@ -31,3 +32,39 @@ export default function Ticket() {
         </div>
     )
 }
+
+//code for mouse hover and mouse leave
+
+
+    // useEffect(() => {
+    //     function startWiggle() {
+    //         const ticketdiv = document.getElementById('ticketdiv')
+    //         ticketdiv.classList.add('animate-wiggle')
+    //         ticketdiv.classList.add('hover:bg-[url("/TicketOutlineYellow.svg")]')
+    //     }
+    //     function stopWiggle() {
+    //         const ticketdiv = document.getElementById('ticketdiv')
+    //         ticketdiv.classList.remove('animate-wiggle')
+    //         ticketdiv.classList.remove('hover:bg-[url("/TicketOutlineYellow.svg")]')
+    //     }
+    //     const ticketdiv = document.getElementById('ticketdiv')
+    //     ticketdiv.addEventListener('mouseenter', startWiggle)
+    //     ticketdiv.addEventListener('mouseleave', stopWiggle)
+    //     return () => {
+    //         ticketdiv.removeEventListener('mouseenter', startWiggle)
+    //         ticketdiv.removeEventListener('mouseleave', stopWiggle)
+    //     }
+    // }, [])
+
+     // ticketdivs.forEach((ticketdiv) => {
+    //   function startWiggle() {
+    //     ticketdiv.classList.add('animate-wiggle');
+    //     ticketdiv.classList.add('bg-[url("/TicketOutlineYellow.svg")]');
+    //   }
+    //   function stopWiggle() {
+    //     ticketdiv.classList.remove('animate-wiggle');
+    //     ticketdiv.classList.remove('bg-[url("/TicketOutlineYellow.svg")]');
+    //   }
+    //   ticketdiv.addEventListener('mouseenter', startWiggle);
+    //   ticketdiv.addEventListener('mouseleave', stopWiggle);
+    // });
