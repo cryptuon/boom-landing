@@ -16,7 +16,7 @@ export default function NavBar({ user }) {
                     {
                         isConnected ? (
                             <div className='flex flex-row items-center text-sm md:text-xl font-[500] gap-x-[1vw]'>
-                                <div className='relative h-[5vh] w-[5vw] '>
+                                <div className='relative h-[5vh] w-[5vh] '>
                                     <Image src="/Profile.png" fill />
                                 </div>
                                 <p>{
