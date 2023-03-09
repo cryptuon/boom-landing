@@ -5,8 +5,8 @@ import Image from 'next/image'
 {/* <div className="bg-[url('/SmallTicketOutline.svg')] bg-no-repeat bg-contain bg-center w-fit h-fit border-2 border-green-400 md:w-[11vmax] md:h-[12vmax] animate-wiggleOut hover:animate-wiggle "> */}
 export default function SmallTicket({number}) {
     return (
-            <div className="flex bg-black rounded-lg w-[30vw] md:w-[10vw] h-fit relative">
-                <div className="bg-white w-[30vw] md:w-[10vw] h-fit border-2 border-black rounded-lg  animate-wiggleOut md:hover:animate-wiggle ">
+            <div className="flex bg-black rounded-lg w-[35vw] md:w-[10vw] h-fit relative">
+                <div className="bg-white w-[35vw] md:w-[10vw] h-fit border-2 border-black rounded-lg  animate-wiggleOut md:hover:animate-wiggle ">
                     <div className="flex flex-col justify-center h-full px-[1vmax] ">
                         <div className="flex items-center justify-center h-[8vmax]  md:h-[4.6vmax] ">
                             <div className='border-b-2 border-black w-[17vmax] h-[5vmax] md:w-[12vmax] md:h-[3vmax] relative  '>
