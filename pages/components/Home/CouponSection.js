@@ -7,8 +7,8 @@ export default function CouponSection() {
       className="my-36 md:my-0 flex flex-1 items-center justify-center flex-row px-[10vw] h-fit  md:h-screen"
       name="Coupons"
     >
-      <div className='flex flex-row  w-full'>
-        <div className='hidden pt-3 md:block'>
+      <div className="flex flex-col md:flex-row w-full">
+        <div className="pt-3">
           <Sidebar />
         </div>
         <div className="flex w-full flex-1  ">
