@@ -59,7 +59,7 @@ export default function LandingSection({setUser}) {
           </div>
         )}
       </div>
-      <div className="order-1 md:order-1 h-fit pt-12 w-full">
+      <div className="order-1 md:order-1 h-fit pt-12 w-full overflow-hidden">
         <FrameTickets />
       </div>
     </div>

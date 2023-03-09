@@ -23,7 +23,8 @@ export default function FrameTickets() {
   }, []);
 
   return (
-    <div className="flex flex-col items-end w-full md:pt-24 md:w-fit md:-ml-20 md:translate-y-10 md:translate-x-80 translate-x-20 rotate-12 md:rotate-[30deg]">
+    <div className="flex flex-col items-end w-full md:pt-36 md:w-fit md:-ml-20 md:translate-y-40 md:translate-x-52 translate-x-20 rotate-12 md:rotate-[30deg]">
+        <div className='flex w-full justify-end items-end md:justify-center md:items-center pb-2'>
         <div className="relative mr-20 md:mr-96 w-[13vh] h-[13vh] mb-[-4vh]">
           <Image
             src="/semiCircleGraphic.svg"
@@ -31,27 +32,25 @@ export default function FrameTickets() {
             className="rotate-[-30deg]"
           />
       </div>
+      </div>
       <div  className="flex flex-col items-start justify-center h-fit w-fit gap-4 ">
         <div className='flex flex-row w-fit h-fit '>
           <Ticket id=".ticket" className="" />
           <Ticket id=".ticket" className="" />
-          <div className="md:hidden">
+          
             <Ticket />
-          </div>
         </div>
         <div className='flex flex-row w-fit ml-12 h-fit '>
           <Ticket id=".ticket" className="" />
           <Ticket id=".ticket" className="" />
-          <div className="md:hidden">
+          
             <Ticket className="" />
-          </div>
         </div>
         <div className='flex flex-row w-fit h-fit '>
           <Ticket id=".ticket" className="" />
           <Ticket id=".ticket" className="" />
-          <div className="md:hidden">
+          
             <Ticket className="" />
-          </div>
         </div>
       </div>
     </div>
