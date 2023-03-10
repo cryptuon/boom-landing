@@ -4,7 +4,7 @@ import { Link, Element } from 'react-scroll'
 export default function CouponSection() {
   return (
     <Element
-      className="my-36 md:my-0 flex flex-1 items-center justify-center flex-row px-[10vw] h-fit  md:h-screen"
+      className="my-36 md:my-0 flex flex-1 items-center justify-center flex-row px-[10vw] md:pl-48 px-5 h-fit  md:h-screen"
       name="Coupons"
     >
       <div className="flex flex-col md:flex-row w-full">

@@ -8,7 +8,7 @@ export default function SmallTicket({number}) {
             <div className="flex bg-black rounded-lg w-[35vw] md:w-[10vw] h-fit relative">
                 <div className="bg-white w-[35vw] md:w-[10vw] h-fit border-2 border-black rounded-lg  animate-wiggleOut md:hover:animate-wiggle ">
                     <div className="flex flex-col justify-center h-full px-[1vmax] ">
-                        <div className="flex items-center justify-center h-[8vmax]  md:h-[3vmax] border-2">
+                        <div className="flex items-center justify-center h-[8vmax]  md:h-[3vmax]">
                             <div className='border-b-2 border-black w-[17vmax] h-[5vmax] md:w-[12vmax] md:h-[3vmax] relative  '>
                                 <Image src='/polygonBanner.png' alt="logo" fill />
                             </div>

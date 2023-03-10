@@ -10,9 +10,11 @@ import { useAccount } from 'wagmi'
 export default function Home({ setUser }) {
   const { address, isConnected } = useAccount('')
   const [loading, setLoading] = useState(false)
+  const [requestInProgress, setRequestInProgress] = useState(false)
+  const [verified, setVerified] = useState(false)
   useEffect(() => {
-    if (isConnected) {
-      setUser(address)
+    if (isConnected && !requestInProgress && !verified) {
+      setRequestInProgress(true)
       let checkwallet = async () => {
         setLoading(true)
         let response = await fetch('/api/checkWalletinDB', {
@@ -24,13 +26,17 @@ export default function Home({ setUser }) {
         })
         let data = await response.json()
         setLoading(false)
+        setRequestInProgress(false)
         if (data.wallet == 'new' || data.wallet == 'unverified') {
           Router.push('/Wallet')
+        }
+        else if (data.wallet == 'verified') {
+          setVerified(true)
         }
       }
       checkwallet()
     }
-  }, [isConnected, loading])
+  }, [isConnected, address, requestInProgress])
 
   return (
     <>
@@ -41,9 +47,9 @@ export default function Home({ setUser }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className={`overflow-x-hidden caret-transparent 
-      ${loading} ? 'blur-sm' : ''
-      `}
+        className={`overflow-x-hidden  caret-transparent ${
+          loading ? 'blur-sm pointer-events-none' : ''
+        } `}
       >
         <LandingSection setUser={setUser} />
         <HowToCoupons />
