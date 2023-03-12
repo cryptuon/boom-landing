@@ -21,19 +21,22 @@ async function getNFTs({ walletAddress, setUserNFTcollection }) {
 
     try {
         var arrayOfNFTimages = []
-        var arrayOfNFTcontractAddresses = []
-        const response = await fetch(url, requestOptions)
-        const result = await response.json()
-        const numNfts = result['totalCount'];
-        const nftList = result['ownedNfts'];
+        var arrayOfNFTcontractAddresses = [
+            "0xB2D8b42A16f1C45eE5bAA205A197c1C958A8895D", 
+            "0x8bD03aBBDdfE8ec4aB52763a6f9c4ebC14b1fF6", 
+            "0x5cF889D3e59a921458edACB98655bC7A915f040F"]
+        // const response = await fetch(url, requestOptions)
+        // const result = await response.json()
+        // const numNfts = result['totalCount'];
+        // const nftList = result['ownedNfts'];
 
-        let i = 1;
- 
-        for (let nft of nftList) {
-            arrayOfNFTimages.push(nft['metadata']['image'])
-            arrayOfNFTcontractAddresses.push(nft['contract']['address'])
-            i++;
-        }
+        // let i = 1;
+
+        // for (let nft of nftList) {
+            // arrayOfNFTimages.push(nft['metadata']['image'])
+            // arrayOfNFTcontractAddresses.push(nft['contract']['address'])
+            // i++;
+        // }
         setUserNFTcollection(arrayOfNFTcontractAddresses)
 
         return arrayOfNFTimages
@@ -57,7 +60,7 @@ export default function UserNfts({ walletAddress, setUserNFTcollection }) {
     }, [walletAddress]);
     return (
         <div className='mt-10 flex flex-col text-center justify-center items-center md:items-start md:text-start text-xl xl:text-2xl xl:leading-tight font-[700] gap-x-[1vw]'>
-            <p>Welcome to the amazing <br className="hidden md:block"/>community of</p>
+            <p>Welcome to the amazing <br className="hidden md:block" />community of</p>
             <div className="flex flex-row pt-3">
                 {
                     nfts.map((nft, index) => {
