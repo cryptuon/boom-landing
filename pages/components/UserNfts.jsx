@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Link, Element } from 'react-scroll';
 import ExploreDealsButton from "./ExploreDealsButton";
-async function getNFTs({ walletAddress }) {
-    console.log(walletAddress)
+
+async function getNFTs({ walletAddress, setUserNFTcollection }) {
     // const baseURL =
     //   'https://eth-goerli.g.alchemy.com/v2/7-Yea8uVN6TmlCf1IoGyed6T47GpqI4W'
     const address = walletAddress
@@ -20,36 +20,35 @@ async function getNFTs({ walletAddress }) {
 
 
     try {
-        var arrayOfNFTs = []
+        var arrayOfNFTimages = []
+        var arrayOfNFTcontractAddresses = []
         const response = await fetch(url, requestOptions)
         const result = await response.json()
-        // console.log(result)
         const numNfts = result['totalCount'];
         const nftList = result['ownedNfts'];
-        // console.log(`Total NFTs owned by ${address}: ${numNfts} \n`)
 
-        // console.log(nftList)
         let i = 1;
-        // console.log(result)
+ 
         for (let nft of nftList) {
-            // console.log(`${i}. ${nft['metadata']['name']}`)
-            arrayOfNFTs.push(nft['metadata']['image'])
+            arrayOfNFTimages.push(nft['metadata']['image'])
+            arrayOfNFTcontractAddresses.push(nft['contract']['address'])
             i++;
         }
-        console.log(arrayOfNFTs)
-        return arrayOfNFTs
+        setUserNFTcollection(arrayOfNFTcontractAddresses)
+
+        return arrayOfNFTimages
     } catch (err) {
         console.log(err)
     }
 }
 
 
-export default function UserNfts({ walletAddress }) {
+export default function UserNfts({ walletAddress, setUserNFTcollection }) {
     const [nfts, setNfts] = useState([])
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         async function fetchNFTs() {
-            const nftsData = await getNFTs({ walletAddress });
+            const nftsData = await getNFTs({ walletAddress, setUserNFTcollection });
             setNfts(nftsData);
             if (nftsData.length > 4) { setNfts(nftsData.slice(0, 4)) }
             setLoading(false);

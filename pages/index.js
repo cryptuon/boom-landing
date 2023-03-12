@@ -8,7 +8,9 @@ import { useEffect, useState } from 'react'
 import Router from 'next/router'
 import { useAccount } from 'wagmi'
 export default function Home({ setUser }) {
-  const { address, isConnected } = useAccount('')
+  // const { address, isConnected } = useAccount('')
+  const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
+  const [isConnected , setIsConnected] = useState(true)
   const [loading, setLoading] = useState(false)
   const [requestInProgress, setRequestInProgress] = useState(false)
   const [verified, setVerified] = useState(false)

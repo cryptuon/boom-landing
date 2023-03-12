@@ -1,19 +1,20 @@
 'use client';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SidebarComponents from './SidebarComponents.jsx'
-export default function Sidebar() {
-    const [value, setValue] = useState(
-        ["The Bored Apes",
-            "Fall guys",
-            "Azuki",
-            "CryptoPunks",
-            "Mutant Ape",
-            "Yacht Club",
-            "Flyfish Club",
-            "Bore",
-            "Bored Ape Yacht Club",
-        ]);
-    const [selected, setSelected] = useState("The Bored Apes");
+export default function Sidebar({ setOffers }) {
+
+    useEffect(() => {
+        getSideBarData().then((data) => {
+            setValue(data);
+            if (data.length > 0) {
+                setSelected(data[0].Name);
+                setOffers(data[0].Offers);
+            }
+        })
+    }, [])
+
+    const [value, setValue] = useState([{ _id: null, Name: 'Loading...', Offers: [] }]);
+    const [selected, setSelected] = useState(null);
 
     return (
         <>
@@ -23,8 +24,14 @@ export default function Sidebar() {
                 </div>
                 <div className='flex flex-col gap-y-5 overflow-y-hidden hover:overflow-y-auto'>
                     {value.map((name) => {
+                        let offers = name.Offers;
+                        name = name.Name;
+        
                         return (
-                            <div className='flex min-w-min' onClick={() => setSelected(name)}>
+                            <div className='flex min-w-min' onClick={() => {
+                                setSelected(name)
+                                setOffers(offers)                              
+                            }}>
                                 <SidebarComponents name={name} selected={selected === name} />
                             </div>
                         )
@@ -34,8 +41,12 @@ export default function Sidebar() {
 
 
             </div>
-            <select className="md:hidden w-full bg-white border-2 border-black shadow-[5px_7px_0px_2px_rgba(0,0,0,1)] rounded-md py-2 px-3 mb-10 font-[500] sm:text-sm">
+            <select 
+            // selected={selected}
+            className="md:hidden w-full bg-white border-2 border-black shadow-[5px_7px_0px_2px_rgba(0,0,0,1)] rounded-md py-2 px-3 mb-10 font-[500] sm:text-sm">
                 {value.map((name) => {
+                    let offers = name.Offers;
+                    name = name.Name;
                     return (
                         <option value={name}>{name}</option>
                     )
@@ -44,4 +55,11 @@ export default function Sidebar() {
         </>
 
     )
+}
+
+
+async function getSideBarData() {
+    const res = await fetch('/api/getNFTCollections');
+    const data = await res.json();
+    return data;
 }

@@ -44,6 +44,7 @@ export default function App({ Component, pageProps }) {
 
   const { address, isConnected } = useAccount('')
   const [user, setUser] = useState(null)
+  const [userNFTcollection, setUserNFTcollection] = useState(null)
 
   // useEffect(() => {
   //   if (isConnected) {
@@ -58,7 +59,7 @@ export default function App({ Component, pageProps }) {
     <>
       <WagmiConfig client={wagmiClient}>
         <NavBar user={user}/>
-        <Component {...pageProps} setUser={setUser}/>
+        <Component {...pageProps} setUser={setUser} setUserNFTcollection={setUserNFTcollection} userNFTcollection={userNFTcollection}/>
         <Web3Modal
           projectId="bd46fa8128fb1ebc5d7b0b8b6ea44682"
           ethereumClient={ethereumClient}

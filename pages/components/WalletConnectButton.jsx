@@ -16,12 +16,6 @@ import {
 
 export default function WalletButton() {
   const { isOpen, open, close, setDefaultChain } = useWeb3Modal()
-  // const { address, isConnected } = useAccount()
-  // const { data: ensName } = useEnsName({ address })
-  // const { connect } = useConnect({
-  //   connector: new InjectedConnector(),
-  // })
-  // if (isConnected) return <div>Connected to {ensName ?? address}</div>
   return (
     <button
       onClick={() => open()}

@@ -1,18 +1,20 @@
 import Sidebar from '../Sidebar'
 import FrameSmallTikcets from '../FrameSmallTickets'
 import { Link, Element } from 'react-scroll'
-export default function CouponSection() {
+import { useState, useEffect } from 'react'
+export default function CouponSection({userNFTcollection}) {
+  const [offers, setOffers] = useState(null)
   return (
     <Element
-      className="my-36 md:my-0 flex flex-1 items-center justify-center flex-row px-[10vw] md:pl-48 px-5 h-fit  md:h-screen"
+      className="my-36 md:my-0 flex flex-1 items-center justify-center flex-row px-[10vw] md:pl-48 h-fit  md:h-screen"
       name="Coupons"
     >
       <div className="flex flex-col md:flex-row w-full">
         <div className="pt-3">
-          <Sidebar />
+          <Sidebar setOffers={setOffers} />
         </div>
         <div className="flex w-full flex-1  ">
-          <FrameSmallTikcets />
+          <FrameSmallTikcets offers={offers} userNFTcollection={userNFTcollection}/>
         </div>
       </div>
     </Element>

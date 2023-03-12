@@ -13,7 +13,6 @@ oAuth2Client.setCredentials({refresh_token: refreshToken})
 
 
 export default async function handler(req, res) {
-  // res.status(200).json({ name: 'John Doe' })
   if (req.method === 'POST') {
     const accessToken = await oAuth2Client.getAccessToken()
     const transporter = nodemailer.createTransport({
@@ -28,10 +27,10 @@ export default async function handler(req, res) {
       }
     
     })
-    // console.log(res)
+  
     let rand = Math.floor(100000 + Math.random() * 1000000)
     const { email, subject, text, recipe } = req.body
-    console.log(email, subject, text, recipe)
+
     let response = await addOTPtoDatabase(email, rand)
 
     const mailData = {
@@ -56,7 +55,7 @@ export default async function handler(req, res) {
 
     transporter.sendMail(mailData, (error, info) => {
       if (error) {
-        return console.log(error)
+        return 
       }
       res.status(200).send({ message: 'Mail send', message_id: info.messageId })
     })
@@ -66,7 +65,7 @@ export default async function handler(req, res) {
 
 async function addOTPtoDatabase(email, otp) {
     let client = await clientPromise
-    const db = client.db('Boom-0-1')
+    const db = client.db('boom-v1')
     let addOTP = await db
           .collection('OTP')
           .insertOne({ "email": email, "otp":otp }) 

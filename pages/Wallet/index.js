@@ -21,7 +21,6 @@ import {
 import { useWeb3Modal } from '@web3modal/react'
 import Router from 'next/router'
 async function getNFTs() {
-  // console.log("fetching NFTs")
   const baseURL =
     'https://eth-mainnet.g.alchemy.com/v2/_pI4M8h8oFOeo2dEpkvZvQK41y-jrRKc'
   const address = 'elanhalpern.eth'
@@ -35,16 +34,12 @@ async function getNFTs() {
   try {
     const response = await fetch(url, requestOptions)
     const result = await response.json()
-    // console.log(result)
     const numNfts = result['totalCount']
     const nftList = result['ownedNfts']
-    console.log(`Total NFTs owned by ${address}: ${numNfts} \n`)
 
-    // console.log(nftList)
     let i = 1
 
     for (let nft of nftList) {
-      console.log(`${i}. ${nft['metadata']['name']}`)
       i++
     }
   } catch (err) {
@@ -53,7 +48,9 @@ async function getNFTs() {
 }
 
 export default function Wallet({walletAddress}) {
-  const { address, isConnected } = useAccount('')
+  // const { address, isConnected } = useAccount('')
+  const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
+  const [isConnected , setIsConnected] = useState(true)
   const [email, setEmail] = useState('')
 
   return (
@@ -105,9 +102,7 @@ export default function Wallet({walletAddress}) {
                 />
                 <button className="border-2 border-black rounded-lg w-24 text-center hover:bg-boom-yellow"
                   onClick={() => {
-                    // console.log(email)
                     addEmailToWallet({email, address}).then((data) => {
-                      console.log(data)
                       Router.push('/Verify?email='+email+'&address='+address, '/Verify',)
                     })
 
@@ -134,7 +129,6 @@ export default function Wallet({walletAddress}) {
 
 
 async function addEmailToWallet({address,email}){
-  // console.log(email)
   let text = 'Your OTP is: '
   let response = await fetch('/api/sendOTPtoEmail', {
     method: 'POST',

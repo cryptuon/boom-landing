@@ -62,7 +62,6 @@ async function checkOTP({otp, email, address}){
         body: JSON.stringify({otp, email, address}),
     })
     const data = await res.json()
-    // alert(data.message)
     if (data.message === 'OTP verified') {
         return {status: 'success'}
     }

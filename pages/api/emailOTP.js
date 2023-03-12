@@ -3,7 +3,7 @@ import { Int32 } from 'mongodb'
 
 export default async function handler(req, res) {
   let client = await clientPromise
-  const db = client.db('Boom-0-1')
+  const db = client.db('boom-v1')
   switch (req.method) {
     case 'POST':
       let bodyObject = req.body
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       let email = bodyObject.email
       //int32
       let inputOTP = parseInt(bodyObject.otp)
-      console.log(address, email, inputOTP)
+      // // console.log(address, email, inputOTP)
       let checkOTP = await db
         .collection('OTP')
         .find({ "email": email, "otp": inputOTP })
