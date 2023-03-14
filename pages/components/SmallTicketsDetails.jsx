@@ -6,8 +6,8 @@ import { useAccount } from 'wagmi'
 import { useState } from 'react'
 export default function SmallTicketDetails({ details, link, showSelected, setShowSelected, userNFTcollection }) {
   // const { address, isConnected } = useAccount('')
-  const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
-  const [isConnected , setIsConnected] = useState(true)
+  const [address, setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
+  const [isConnected, setIsConnected] = useState(true)
   return (
     <div>
 
@@ -41,34 +41,37 @@ export default function SmallTicketDetails({ details, link, showSelected, setSho
             </div>
             {isConnected ? (
               <div
-                onClick={availOffer({ 
-                  userNFTcollection, 
-                  walletAddress: address, 
-                  nftCollections: details.NFTCollection, 
-                  offerCampaign: details.CampaignCode 
-                })}
-              className="flex flex-row justify-around items-center h-fit m-[1vmax] border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
+                onClick={async () => {
+                  let coupon = await availOffer({
+                    userNFTcollection,
+                    walletAddress: address,
+                    nftCollections: details.NFTCollections,
+                    offerCampaign: details.CampaignCode
+                  })
+                  alert(coupon)
+                }}
+                className="flex flex-row justify-around items-center h-fit m-[1vmax] border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
               >
-            <p className="text-xs md:text-sm lg:text-base font-[700] mb-[0.1vmax]">Avail Offer</p>
-          </div>
-          ) : (
-            <div
+                <p className="text-xs md:text-sm lg:text-base font-[700] mb-[0.1vmax]">Avail Offer</p>
+              </div>
+            ) : (
+              <div
                 onClick={alert('Please connect your wallet')}
-              className="flex flex-row justify-around items-center h-fit m-[1vmax] border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
+                className="flex flex-row justify-around items-center h-fit m-[1vmax] border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
               >
-            <p className="text-xs md:text-sm lg:text-base font-[700] mb-[0.1vmax]">Avail Offer</p>
-          </div>
-          // <div className="flex flex-row justify-around items-center h-fit m-4 border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer ">
-          //   <p className="text-[2vmax] font-[700] mb-[0.1vmax]">A{number}BC</p>
-          //   <BiCopy className="text-[2vmax] font-[700] mb-[0.1vmax]" />
-          // </div>
+                <p className="text-xs md:text-sm lg:text-base font-[700] mb-[0.1vmax]">Avail Offer</p>
+              </div>
+              // <div className="flex flex-row justify-around items-center h-fit m-4 border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer ">
+              //   <p className="text-[2vmax] font-[700] mb-[0.1vmax]">A{number}BC</p>
+              //   <BiCopy className="text-[2vmax] font-[700] mb-[0.1vmax]" />
+              // </div>
             )}
+          </div>
         </div>
-        </div>
-  ) : (
-    <div className="bg-[url('/SmallTicketsDetailsNone.svg')] bg-no-repeat bg-contain bg-center w-[14.22vmax] h-[30vmax] hidden md:block" />
-  )
-}
+      ) : (
+        <div className="bg-[url('/SmallTicketsDetailsNone.svg')] bg-no-repeat bg-contain bg-center w-[14.22vmax] h-[30vmax] hidden md:block" />
+      )
+      }
     </div >
   )
 }
@@ -78,14 +81,17 @@ async function availOffer({
   nftCollections,
   walletAddress,
   offerCampaign,
-  userNftCollection,
+  userNFTcollection,
 }) {
+  // alert(offerCampaign)
+  console.log(userNFTcollection)
+  // let commonCollection = []
   let commonCollection = nftCollections.filter((nft) =>
-    userNftCollection.includes(nft))
+    userNFTcollection.includes(nft))
   if (commonCollection.length === 0) {
     return "No common collection"
   }
-  const res = await fetch('api/getUserCopoun', {
+  const res = await fetch('api/getUserCoupon', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

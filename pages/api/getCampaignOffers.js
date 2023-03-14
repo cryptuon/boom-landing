@@ -12,7 +12,7 @@ export default async function handler(req, res) {
                 .collection("CampaignDetails")
                 .find({ "CampaignCode": { $in: campaignCodes } })
                 .toArray();
-            console.log(offers);
+            // console.log(offers);
             res.status(200).json(offers);  
     }
     }

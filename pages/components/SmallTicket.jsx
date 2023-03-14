@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 export default function SmallTicket({headline, details}) {
     useEffect(() => {
-        console.log(headline)
+        // console.log(headline)
     }, [details])
     return (
             <div className="flex bg-black rounded-lg w-[35vw] md:w-[10vw] h-fit relative">

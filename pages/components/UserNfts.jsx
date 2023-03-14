@@ -7,10 +7,10 @@ import ExploreDealsButton from "./ExploreDealsButton";
 async function getNFTs({ walletAddress, setUserNFTcollection }) {
     // const baseURL =
     //   'https://eth-goerli.g.alchemy.com/v2/7-Yea8uVN6TmlCf1IoGyed6T47GpqI4W'
-    const address = walletAddress
+    // const address = walletAddress
     const baseURL =
         'https://eth-mainnet.g.alchemy.com/v2/_pI4M8h8oFOeo2dEpkvZvQK41y-jrRKc'
-    // const address = 'elanhalpern.eth'
+    const address = 'elanhalpern.eth'
     const url = `${baseURL}/getNFTs/?owner=${address}`
 
     var requestOptions = {
@@ -20,25 +20,31 @@ async function getNFTs({ walletAddress, setUserNFTcollection }) {
 
 
     try {
-        var arrayOfNFTimages = []
+        var arrayOfNFTimages = ['https://duskbreakers.gg/breaker_images/9.png', 
+                                'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDov…iMTYwIiBjbGFzcz0iYmFzZSI+SHlwZXI8L3RleHQ+PC9zdmc+', 
+                                'https://ipfs.io/ipfs/bafybeihe67vtt35ylkmylsze5bwmofthonfnvrl6oinqd65d577nhomjdq', 
+                                'ipfs://QmZkkoNaKp6PMv6wwy5YqsHvk3EkigUMvhgrmo3SaohZbP/1546.png']
         var arrayOfNFTcontractAddresses = [
-            "0xB2D8b42A16f1C45eE5bAA205A197c1C958A8895D", 
-            "0x8bD03aBBDdfE8ec4aB52763a6f9c4ebC14b1fF6", 
+            "0xB2D8b42A16f1C45eE5bAA205A197c1C958A8895D",
+            "0x8bD03aBBDdfE8ec4aB52763a6f9c4ebC14b1fF6",
             "0x5cF889D3e59a921458edACB98655bC7A915f040F"]
         // const response = await fetch(url, requestOptions)
         // const result = await response.json()
         // const numNfts = result['totalCount'];
         // const nftList = result['ownedNfts'];
-
         // let i = 1;
+        // console.log(nftList)
 
         // for (let nft of nftList) {
-            // arrayOfNFTimages.push(nft['metadata']['image'])
-            // arrayOfNFTcontractAddresses.push(nft['contract']['address'])
-            // i++;
+        //     if (i > 4) { break; }
+        //     if (nft['metadata']['image'] === undefined) { continue; }
+        //     // console.log(nft['metadata']['image'])
+        //     arrayOfNFTimages.push(nft['metadata']['image'])
+        //     console.log(arrayOfNFTimages)
+        //     // arrayOfNFTcontractAddresses.push(nft['contract']['address'])
+        //     i++;
         // }
         setUserNFTcollection(arrayOfNFTcontractAddresses)
-
         return arrayOfNFTimages
     } catch (err) {
         console.log(err)
@@ -53,7 +59,6 @@ export default function UserNfts({ walletAddress, setUserNFTcollection }) {
         async function fetchNFTs() {
             const nftsData = await getNFTs({ walletAddress, setUserNFTcollection });
             setNfts(nftsData);
-            if (nftsData.length > 4) { setNfts(nftsData.slice(0, 4)) }
             setLoading(false);
         }
         fetchNFTs();

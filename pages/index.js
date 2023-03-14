@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 import { useEffect, useState } from 'react'
 import Router from 'next/router'
 import { useAccount } from 'wagmi'
-export default function Home({ setUser }) {
+export default function Home({ setUser , setUserNFTcollection, userNFTcollection}) {
   // const { address, isConnected } = useAccount('')
   const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
   const [isConnected , setIsConnected] = useState(true)
@@ -53,9 +53,9 @@ export default function Home({ setUser }) {
           loading ? 'blur-sm pointer-events-none' : ''
         } `}
       >
-        <LandingSection setUser={setUser} />
+        <LandingSection setUser={setUser} setUserNFTcollection={setUserNFTcollection}/>
         <HowToCoupons />
-        <CouponSection />
+        <CouponSection userNFTcollection={userNFTcollection}/>
         <SupportedNfts />
         <Footer />
       </div>

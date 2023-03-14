@@ -8,7 +8,7 @@ export default async function handler(req, res) {
             let walletAddress = bodyObject.walletAddress;
             let nftCollectionList = bodyObject.commonCollection;
             let offerCampaign = bodyObject.offerCampaign;
-
+            console.log(walletAddress)
             let findOfferAvailed = await db.collection("OfferAvailDetails")
                 .find({ User: {
                     WalletAddress: walletAddress,
@@ -42,8 +42,10 @@ export default async function handler(req, res) {
                         User: {
                             WalletAddress: walletAddress,
                         },
-                        offerCampaign: offerCampaign,
-                        NFTCollection: nftCollectionList, // nftList is an array of objects
+                        OfferCampaign: offerCampaign,
+                        NFTCollection: nftCollectionList[0],
+                        OfferCouponCode: couponCode,
+                         // nftList is an array of objects
                     });
                     let updateCount = await db.collection("CampaignDetails").
                         updateOne(
