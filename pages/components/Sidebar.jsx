@@ -1,10 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react'
 import SidebarComponents from './SidebarComponents.jsx'
-export default function Sidebar({ setOffers }) {
+export default function Sidebar({ setOffers, userNFTcollection }) {
 
     useEffect(() => {
-        getSideBarData().then((data) => {
+        console.log("useEffect")
+        getSideBarData({ userNFTcollection }).then((data) => {
+            // setValue([...value, ...data]);
             setValue(data);
             if (data.length > 0) {
                 setSelected(data[0].Name);
@@ -26,11 +28,11 @@ export default function Sidebar({ setOffers }) {
                     {value.map((name) => {
                         let offers = name.Offers;
                         name = name.Name;
-        
+
                         return (
                             <div className='flex min-w-min' onClick={() => {
                                 setSelected(name)
-                                setOffers(offers)                              
+                                setOffers(offers)
                             }}>
                                 <SidebarComponents name={name} selected={selected === name} />
                             </div>
@@ -41,9 +43,9 @@ export default function Sidebar({ setOffers }) {
 
 
             </div>
-            <select 
-            // selected={selected}
-            className="md:hidden w-full bg-white border-2 border-black shadow-[5px_7px_0px_2px_rgba(0,0,0,1)] rounded-md py-2 px-3 mb-10 font-[500] sm:text-sm">
+            <select
+                // selected={selected}
+                className="md:hidden w-full bg-white border-2 border-black shadow-[5px_7px_0px_2px_rgba(0,0,0,1)] rounded-md py-2 px-3 mb-10 font-[500] sm:text-sm">
                 {value.map((name) => {
                     let offers = name.Offers;
                     name = name.Name;
@@ -57,9 +59,22 @@ export default function Sidebar({ setOffers }) {
     )
 }
 
-
-async function getSideBarData() {
-    const res = await fetch('/api/getNFTCollections');
-    const data = await res.json();
-    return data;
+async function getSideBarData({ userNFTcollection }) {
+    console.log("sending  data")
+    const res1 = await fetch('/api/getForYou',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userNFTs: userNFTcollection }),
+        }
+    );
+    const forYou = await res1.json();
+    const res2 = await fetch('/api/getNFTCollections');
+    const data = await res2.json();
+    let SidebarData = [
+        forYou, ...data
+    ];
+    return SidebarData;
 }

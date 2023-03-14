@@ -11,7 +11,7 @@ export default function CouponSection({userNFTcollection}) {
     >
       <div className="flex flex-col md:flex-row w-full">
         <div className="pt-3">
-          <Sidebar setOffers={setOffers} />
+          <Sidebar setOffers={setOffers} userNFTcollection={userNFTcollection}/>
         </div>
         <div className="flex w-full flex-1  ">
           <FrameSmallTikcets offers={offers} userNFTcollection={userNFTcollection}/>

@@ -8,7 +8,7 @@ export default async function handler(req, res) {
             let walletAddress = bodyObject.walletAddress;
             let nftCollectionList = bodyObject.commonCollection;
             let offerCampaign = bodyObject.offerCampaign;
-            console.log(walletAddress)
+            // console.log(walletAddress)
             let findOfferAvailed = await db.collection("OfferAvailDetails")
                 .find({ User: {
                     WalletAddress: walletAddress,

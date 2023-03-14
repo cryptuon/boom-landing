@@ -84,7 +84,7 @@ async function availOffer({
   userNFTcollection,
 }) {
   // alert(offerCampaign)
-  console.log(userNFTcollection)
+  // console.log(userNFTcollection)
   // let commonCollection = []
   let commonCollection = nftCollections.filter((nft) =>
     userNFTcollection.includes(nft))
