@@ -5,23 +5,23 @@ import { FaInstagram } from 'react-icons/fa'
 import { FaLinkedinIn } from 'react-icons/fa'
 export default function Footer() {
     return (
-        <div className='flex flex-col items-center px-14 w-full h-26 py-5 bg-[#0F0F0F]'>
+        <div className='flex flex-col items-center px-14 w-full py-5 bg-[#0F0F0F]'>
             <div className="flex w-full flex-row items-center justify-between">
-                <div className='flex items-center justify-center relative h-[7vh] w-[7vh]'>
+                <div className='flex items-center justify-center relative h-[7vh] md:w-[7.5vw] w-[11vh]'>
                     <Image src="/logo.svg" alt="logo" fill className="mr-12" />
                 </div>
-                <div className="flex flex-row items-center justify-evenly gap-2">
-                    <FaFacebookF className='text-boom-yellow text-[1.5vh]' />
-                    <FaTwitter className='text-boom-yellow text-[1.5vh]' />
-                    <FaInstagram className='text-boom-yellow text-[1.5vh]' />
-                    <FaLinkedinIn className='text-boom-yellow text-[1.5vh]' />
+                <div className="flex flex-row items-center justify-evenly gap-4">
+                    <FaFacebookF className='text-boom-yellow text-[1.5vmax]' />
+                    <FaTwitter className='text-boom-yellow text-[1.5vmax]' />
+                    <FaInstagram className='text-boom-yellow text-[1.5vmax]' />
+                    <FaLinkedinIn className='text-boom-yellow text-[1.5vmax]' />
                 </div>
             </div>
                 <div className="flex flex-row items-center gap-4 ">
-                    <p className='text-boom-yellow text-xs'>© 2022 Boom. All rights reserved.</p>
-                    <p className='text-boom-yellow text-xs'>Terms of Service</p>
-                    <p className='text-boom-yellow text-xs'>Privacy Policy</p>
-                    <p className='text-boom-yellow text-xs'>Cookie Policy</p>
+                    <p className='text-boom-yellow text-xs md:text-base'>© 2022 Boom. All rights reserved.</p>
+                    <p className='text-boom-yellow text-xs md:text-base'>Terms of Service</p>
+                    <p className='text-boom-yellow text-xs md:text-base'>Privacy Policy</p>
+                    <p className='text-boom-yellow text-xs md:text-base'>Cookie Policy</p>
             </div>
         </div>
     )

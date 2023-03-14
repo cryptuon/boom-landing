@@ -10,10 +10,10 @@ export default function Ticket({ className, bg }) {
                     <div className="flex items-center justify-center h-full">
                         <div className="flex flex-col items-center justify-between py-[1.25vmax] pl-[2vmax] h-full ">
                             <div className='w-[2vmax] h-[2vmax] relative'>
-                                <Image src="/polygon.png" alt="logo" fill sizes='2vmax' className="mr-8" />
+                                <Image src="/ticketlogo1.png" alt="logo" fill sizes='2vmax' className="mr-8" />
                             </div>
                             <div className='w-[2vmax] h-[2vmax] relative'>
-                                <Image src="/apeClub.png" alt="logo" fill sizes='2vmax' className="mr-8" />
+                                <Image src="/ticketlogo2.png" alt="logo" fill sizes='2vmax' className="mr-8" />
                             </div>
                         </div>
                         <div className="flex flex-col justify-center px-[1vmax] h-full overflow-hidden ">
