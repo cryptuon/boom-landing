@@ -11,10 +11,10 @@ import { useAccount } from 'wagmi'
 import UserNfts from '../UserNfts'
 import ExploreDealsButton from '../ExploreDealsButton'
 import { useEffect, useState } from 'react'
-export default function LandingSection({setUser, setUserNFTcollection}) {
-  // const { address, isConnected } = useAccount('')
-  const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
-  const [isConnected , setIsConnected] = useState(true)
+export default function LandingSection({user, setUser, setUserNFTcollection}) {
+  const { address, isConnected } = useAccount('')
+  // const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
+  // const [isConnected , setIsConnected] = useState(true)
 
   return (
     <div className="flex flex-col h-fit items-center md:flex-row md:items-start justify-between md:h-screen">
@@ -32,6 +32,7 @@ export default function LandingSection({setUser, setUserNFTcollection}) {
                 size="10"
                 placeholder={`${address.slice(0, 9)}...`}
                 onChange={(e) => setUser(e.target.value)}
+                value={user}
               />
             </div>
             <UserNfts walletAddress={address} setUserNFTcollection={setUserNFTcollection}

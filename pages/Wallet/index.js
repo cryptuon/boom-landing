@@ -48,9 +48,9 @@ async function getNFTs() {
 }
 
 export default function Wallet({walletAddress}) {
-  // const { address, isConnected } = useAccount('')
-  const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
-  const [isConnected , setIsConnected] = useState(true)
+  const { address, isConnected } = useAccount('')
+  // const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
+  // const [isConnected , setIsConnected] = useState(true)
   const [email, setEmail] = useState('')
 
   return (
@@ -138,7 +138,7 @@ async function addEmailToWallet({address,email}){
     body: JSON.stringify({email, text}),
   })
   let data = await response.json()
-
+  alert(data.message)
   response = await fetch('/api/addEmailToWallet', {
     method: 'POST',
     headers: {
@@ -147,5 +147,6 @@ async function addEmailToWallet({address,email}){
     body: JSON.stringify({address,email}),
   })
   data = await response.json()
+  console.log(data)
   return data
 }

@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       if (checkOTP.length > 0) {
         res.json({ message: 'OTP verified' })
         let updateVerified = await db
-          .collection('Wallet')
+          .collection('Users')
           .updateOne({ walletAddress: address }, { $set: { verified: true } })
       } else {
         res.json({ message: 'OTP not verified' })

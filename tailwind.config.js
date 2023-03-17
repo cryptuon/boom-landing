@@ -30,10 +30,25 @@ module.exports = {
           // '80%': { transform: 'translate(-13px,-13px) ' },
           '100%': { transform: 'translate(0px,0px) ' },
         },
+
+        grow:{
+          '0%': { transform: 'scale(0.1) ' },
+          // '10%': { transform: 'scale(0.2) ' },
+          // '20%': { transform: 'scale(0.3) ' },
+          // '30%': { transform: 'scale(0.4) ' },
+          // '40%': { transform: 'scale(0.5) ' },
+          // '50%': { transform: 'scale(0.6) ' },
+          // '60%': { transform: 'scale(0.7) ' },
+          // '70%': { transform: 'scale(0.8) ' },
+          // '80%': { transform: 'scale(0.9) ' },
+          // '90%': { transform: 'scale(1) ' },
+          '10%': { transform: 'scale(1) ' },
+        }
       },
       animation: {
         wiggle: 'in 0.75s ease-out forwards',
         wiggleOut: 'out 0.5s ease-in forwards',
+        grow: 'grow 0.5s ease-in forwards', 
       },
       fontFamily: {
         display: ['var(--font-luckiestGuy)', ...defaultTheme.fontFamily.sans],

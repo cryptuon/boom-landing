@@ -1,19 +1,26 @@
 'use client';
 import { useEffect, useState } from 'react'
 import SidebarComponents from './SidebarComponents.jsx'
+import { useAccount } from 'wagmi';
 export default function Sidebar({ setOffers, userNFTcollection }) {
+
+    const { isConnected } = useAccount('')
 
     useEffect(() => {
         console.log("useEffect")
-        getSideBarData({ userNFTcollection }).then((data) => {
-            // setValue([...value, ...data]);
+        async function fetchNFTcollections() {
+            const data = await getSideBarData({ userNFTcollection });
             setValue(data);
             if (data.length > 0) {
                 setSelected(data[0].Name);
                 setOffers(data[0].Offers);
             }
-        })
-    }, [])
+        }
+        fetchNFTcollections()
+
+
+    }, [isConnected, userNFTcollection])
+
 
     const [value, setValue] = useState([{ _id: null, Name: 'Loading...', Offers: [] }]);
     const [selected, setSelected] = useState(null);
@@ -60,8 +67,10 @@ export default function Sidebar({ setOffers, userNFTcollection }) {
 }
 
 async function getSideBarData({ userNFTcollection }) {
-    console.log("sending  data")
-    const res1 = await fetch('/api/getForYou',
+    // alert("sending  data")
+    // alert(userNFTcollection)
+    if (userNFTcollection) {
+        const res1 = await fetch('/api/getForYou',
         {
             method: 'POST',
             headers: {
@@ -69,12 +78,21 @@ async function getSideBarData({ userNFTcollection }) {
             },
             body: JSON.stringify({ userNFTs: userNFTcollection }),
         }
-    );
-    const forYou = await res1.json();
-    const res2 = await fetch('/api/getNFTCollections');
-    const data = await res2.json();
-    let SidebarData = [
-        forYou, ...data
-    ];
-    return SidebarData;
+        );
+        let forYou = await res1.json();
+        const res2 = await fetch('/api/getNFTCollections');
+        const data = await res2.json();
+        let SidebarData = [
+            forYou, ...data
+        ];
+        return SidebarData;
+    }
+    else{
+        const res2 = await fetch('/api/getNFTCollections');
+        const data = await res2.json();
+        let SidebarData = [
+            ...data
+        ];
+        return SidebarData;
+    }
 }

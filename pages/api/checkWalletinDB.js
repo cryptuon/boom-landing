@@ -14,11 +14,12 @@ export default async function handler(req, res) {
           walletAddress: bodyObject.walletAddress,
           email: '',
           verified: false,
+          name: null,
         })
         res.status(200).json({ wallet: 'new' })
       } else {
         if (findWallet[0].verified == true) {
-          res.status(200).json({ wallet: 'verified' })
+          res.status(200).json({ wallet: 'verified', name: findWallet[0].name  })
         } else {
           res.status(200).json({ wallet: 'unverified' })
         }

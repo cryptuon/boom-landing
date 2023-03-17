@@ -5,8 +5,8 @@ export default async function handler(req, res) {
     switch (req.method) {
         case "POST":
             let bodyObject = req.body;
-            // // console.log("wallet received: ", bodyObject.address);
-            let updateWallet = await db.collection("Wallet").updateOne({ "walletAddress": bodyObject.address }, { $set: { 
+            console.log("wallet received: ", bodyObject.address);
+            let updateWallet = await db.collection("Users").updateOne({ "walletAddress": bodyObject.address }, { $set: { 
                 "email": bodyObject.email, 
                 "verified": false
             } });

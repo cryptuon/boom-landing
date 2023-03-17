@@ -5,9 +5,9 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useAccount } from 'wagmi'
 import { useState } from 'react'
 export default function SmallTicketDetails({ details, link, showSelected, setShowSelected, userNFTcollection }) {
-  // const { address, isConnected } = useAccount('')
-  const [address, setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
-  const [isConnected, setIsConnected] = useState(true)
+  const { address, isConnected } = useAccount('')
+  // const [address, setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
+  // const [isConnected, setIsConnected] = useState(true)
   return (
     <div>
 

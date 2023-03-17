@@ -7,10 +7,18 @@ import Footer from './components/Footer'
 import { useEffect, useState } from 'react'
 import Router from 'next/router'
 import { useAccount } from 'wagmi'
-export default function Home({ setUser , setUserNFTcollection, userNFTcollection}) {
-  // const { address, isConnected } = useAccount('')
-  const [address , setAddress] = useState('0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B')
-  const [isConnected , setIsConnected] = useState(true)
+export default function Home({
+  setScale,
+  user,
+  setUser,
+  setUserNFTcollection,
+  userNFTcollection,
+}) {
+  const { address, isConnected } = useAccount('')
+  // const [address, setAddress] = useState(
+  //   '0x7A02A9b9A7Ce979cFEB7456D40B6c8b3C3d6E98B',
+  // )
+  // const [isConnected, setIsConnected] = useState(true)
   const [loading, setLoading] = useState(false)
   const [requestInProgress, setRequestInProgress] = useState(false)
   const [verified, setVerified] = useState(false)
@@ -31,9 +39,9 @@ export default function Home({ setUser , setUserNFTcollection, userNFTcollection
         setRequestInProgress(false)
         if (data.wallet == 'new' || data.wallet == 'unverified') {
           Router.push('/Wallet')
-        }
-        else if (data.wallet == 'verified') {
+        } else if (data.wallet == 'verified') {
           setVerified(true)
+          setUser(data.name)
         }
       }
       checkwallet()
@@ -52,10 +60,15 @@ export default function Home({ setUser , setUserNFTcollection, userNFTcollection
         className={`overflow-x-hidden  caret-transparent ${
           loading ? 'blur-sm pointer-events-none' : ''
         } `}
+        onClick={() => setScale(0)}
       >
-        <LandingSection setUser={setUser} setUserNFTcollection={setUserNFTcollection}/>
+        <LandingSection
+          user={user}
+          setUser={setUser}
+          setUserNFTcollection={setUserNFTcollection}
+        />
         <HowToCoupons />
-        <CouponSection userNFTcollection={userNFTcollection}/>
+        <CouponSection userNFTcollection={userNFTcollection} />
         <SupportedNfts />
         <Footer />
       </div>
