@@ -42,7 +42,7 @@ module.exports = {
           // '70%': { transform: 'scale(0.8) ' },
           // '80%': { transform: 'scale(0.9) ' },
           // '90%': { transform: 'scale(1) ' },
-          '10%': { transform: 'scale(1) ' },
+          '50%': { transform: 'scale(1) ' },
         }
       },
       animation: {

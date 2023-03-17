@@ -18,7 +18,7 @@ export default function LandingSection({user, setUser, setUserNFTcollection}) {
 
   return (
     <div className="flex flex-col h-fit items-center md:flex-row md:items-start justify-between md:h-screen">
-      <div className="order-2 md:order-1 md:pl-48 ">
+      <div className="order-2 md:order-1  md:pl-[12vw]">
         {isConnected ? (
           <div className="flex flex-1 flex-col items-center md:items-start h-fit w-fit ">
             <p

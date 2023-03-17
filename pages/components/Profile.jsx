@@ -10,7 +10,7 @@ export default function Profile({
         <div className={`rounded-lg flex flex-col gap-y-2 
                         border-2 border-black z-50 absolute
                          bg-white w-[20vh] md:w-[10vw] p-5 overflow-auto
-                         items-start font-[500] text-lg
+                         items-start font-[500] text-lg origin-top
             ${scale === 0 ? 'scale-0' : ' animate-grow'
             } 
         `}

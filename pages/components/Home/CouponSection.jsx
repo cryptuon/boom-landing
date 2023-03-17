@@ -6,7 +6,7 @@ export default function CouponSection({userNFTcollection}) {
   const [offers, setOffers] = useState(null)
   return (
     <Element
-      className="my-36 md:my-0 flex flex-1 items-center justify-center flex-row px-[10vw] md:pl-48 h-fit  md:h-screen"
+      className="my-36 md:my-0 flex flex-1 items-center justify-center flex-row px-[10vw]  md:pl-[12vw] h-fit  md:h-screen"
       name="Coupons"
     >
       <div className="flex flex-col md:flex-row w-full">
