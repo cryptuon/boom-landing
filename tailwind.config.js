@@ -43,6 +43,9 @@ module.exports = {
           // '80%': { transform: 'scale(0.9) ' },
           // '90%': { transform: 'scale(1) ' },
           '50%': { transform: 'scale(1) ' },
+        },
+        buttonFrames:{
+          '0%': { transform: 'translate(0px,0px) ' },
         }
       },
       animation: {

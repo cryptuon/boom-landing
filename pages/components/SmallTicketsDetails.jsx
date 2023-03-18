@@ -55,11 +55,19 @@ export default function SmallTicketDetails({ details, link, showSelected, setSho
                 <p className="text-xs md:text-sm lg:text-base font-[700] mb-[0.1vmax]">Avail Offer</p>
               </div>
             ) : (
-              <div
-                onClick={alert('Please connect your wallet')}
-                className="flex flex-row justify-around items-center h-fit m-[1vmax] border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
-              >
-                <p className="text-xs md:text-sm lg:text-base font-[700] mb-[0.1vmax]">Avail Offer</p>
+              <div>
+                <div
+                  // onClick={alert('Please connect your wallet')}
+                  className="flex flex-row justify-around items-center h-fit m-[1vmax] rounded-md bg-black cursor-pointer"
+                >
+                  <p className="
+                  bg-boom-yellow w-full text-center h-full
+                  text-xs md:text-sm lg:text-base font-[700] 
+                  -translate-y-1 -translate-x-1 hover:translate-x-0 hover:translate-y-0
+                  border-2 border-black rounded-md">
+                    Avail Offer
+                  </p>
+                </div>
               </div>
               // <div className="flex flex-row justify-around items-center h-fit m-4 border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer ">
               //   <p className="text-[2vmax] font-[700] mb-[0.1vmax]">A{number}BC</p>

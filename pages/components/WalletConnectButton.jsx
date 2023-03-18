@@ -21,7 +21,8 @@ export default function WalletButton() {
       onClick={() => open()}
       className="flex h-[6vh] md:w-[11.5vw] w-[16vh] relative"
     >
-      <Image src="/ConnectWallet.svg" fill />
+      <Image src="/ConnectWalletBottom.svg" fill />
+      <Image className='-translate-x-2 -translate-y-2 hover:translate-x-0 hover:translate-y-0' src="/ConnectWalletTop.svg" fill />
     </button>
   )
 }
