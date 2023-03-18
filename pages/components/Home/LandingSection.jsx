@@ -1,11 +1,5 @@
 import Image from 'next/image'
 import FrameTickets from '../FrameTickets'
-import { Luckiest_Guy } from '@next/font/google'
-const luckiestGuy = Luckiest_Guy({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-luckiestGuy',
-})
 import WalletButton from '../WalletConnectButton'
 import { useAccount } from 'wagmi'
 import UserNfts from '../UserNfts'
@@ -22,13 +16,13 @@ export default function LandingSection({user, setUser, setUserNFTcollection}) {
         {isConnected ? (
           <div className="flex flex-1 flex-col items-center md:items-start h-fit w-fit ">
             <p
-              className={`${luckiestGuy.variable} font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
+              className={`font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
             >
               Hey
             </p>
             <div className=" flex items-center md:items-start md:justify-start justify-center">
               <input
-                className={`${luckiestGuy.variable} border-black text-center md:text-start font-display border-none text-4xl xl:text-8xl xl:leading-tight caret-unselected-gray placeholder:text-unselected-gray`}
+                className={`border-black text-center md:text-start font-display border-none text-4xl xl:text-8xl xl:leading-tight caret-unselected-gray placeholder:text-unselected-gray`}
                 size="10"
                 placeholder={`${address.slice(0, 9)}...`}
                 onChange={(e) => setUser(e.target.value)}
@@ -41,7 +35,7 @@ export default function LandingSection({user, setUser, setUserNFTcollection}) {
         ) : (
           <div className="flex flex-1 flex-col text-start items-start md:text-start h-fit  md:pr-[11.6vw]">
             <p
-              className={`${luckiestGuy.variable}  font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
+              className={` font-display text-4xl xl:text-8xl xl:leading-tight pt-24`}
             >
               Get <br className="hidden md:block" />
               Amazing

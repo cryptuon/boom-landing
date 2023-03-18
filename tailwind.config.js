@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   
   content: [
@@ -54,7 +55,8 @@ module.exports = {
         grow: 'grow 0.5s ease-in forwards', 
       },
       fontFamily: {
-        display: ['var(--font-luckiestGuy)', ...defaultTheme.fontFamily.sans],
+        // display: ['var(--font-luckiestGuy)', ...defaultTheme.fontFamily.sans],
+        display: ['Luckiest Guy'],
       },
       colors: {
         'boom-yellow': '#FFEB33',

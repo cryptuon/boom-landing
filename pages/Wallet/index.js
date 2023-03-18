@@ -2,12 +2,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import { useState } from 'react'
-import { Butcherman, Cormorant_SC, Luckiest_Guy } from '@next/font/google'
-const luckiestGuy = Luckiest_Guy({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-luckiestGuy',
-})
 
 import {
   configureChains,
@@ -65,7 +59,7 @@ export default function Wallet({walletAddress}) {
         <div className="flex flex-col flex-1 pt-24 pl-36">
           <div>
             <p
-              className={`${luckiestGuy.variable} font-display text-8xl pt-24`}
+              className={`font-display text-8xl pt-24`}
             >
               Wallet
               <br />

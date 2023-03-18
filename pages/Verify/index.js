@@ -1,13 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { Butcherman, Cormorant_SC, Luckiest_Guy } from '@next/font/google'
 import { useRouter } from 'next/router'
 
-const luckiestGuy = Luckiest_Guy({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-luckiestGuy',
-})
 export default function Verify() {
     const router = useRouter()
     const {email} = router.query;
@@ -16,7 +10,7 @@ export default function Verify() {
   return (
     <div className="flex flex-col h-screen w-full items-center justify-center">
       <p
-        className={`${luckiestGuy.variable} font-display text-4xl xl:text-8xl xl:leading-tight`}
+        className={`font-display text-4xl xl:text-8xl xl:leading-tight`}
       >
         Verify Email
       </p>

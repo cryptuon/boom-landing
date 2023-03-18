@@ -1,12 +1,6 @@
 import SmallTicket from '../SmallTicket'
 import Image from 'next/image'
 import Ticket from '../Ticket'
-import { Luckiest_Guy } from '@next/font/google'
-const luckiestGuy = Luckiest_Guy({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-luckiestGuy',
-})
 import { useState } from 'react'
 import { BsCircle, BsCircleFill } from 'react-icons/bs'
 
@@ -69,7 +63,7 @@ export default function HowToCoupons() {
       </div>
       <div className="order-2 md:order-1 ">
         <p
-          className={`${luckiestGuy.variable} font-display text-center md:text-start text-4xl xl:text-8xl xl:leading-tight pt-24`}
+          className={`font-display text-center md:text-start text-4xl xl:text-8xl xl:leading-tight pt-24`}
         >
           How to <br className="hidden md:block" />
           Get
