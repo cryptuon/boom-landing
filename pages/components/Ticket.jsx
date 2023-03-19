@@ -17,7 +17,7 @@ export default function Ticket({ className, bg }) {
                             </div>
                         </div>
                         <div className="flex flex-col justify-center px-[1vmax] h-full overflow-hidden ">
-                            <p className="text-[2vmax] font-bold leading-tight md:text-sm">90% OFF</p>
+                            <p className="text-[2vmax] font-bold leading-tight md:text-[1.4vmax]">90% OFF</p>
                             <p className="text-[0.7vmax] font-medium leading-tight">Get off on the whole company. We are going bankrupt beca.....</p>
                         </div>
                         <div className="flex flex-col items-center justify-end py-[1vmax] pr-[2.5vmax] h-full">
@@ -25,7 +25,7 @@ export default function Ticket({ className, bg }) {
                         </div>
                     </div>
                     <div className="flex items-center justify-center py-[1vmax] h-full w-[9vmax] px-[3.5vmax]">
-                        <p className="text-[2vmax] font-bold transform -rotate-90 md:text-sm">AL3LD3</p>
+                        <p className="text-[2vmax] font-bold transform -rotate-90 md:text-[1.4vmax]">AL3LD3</p>
                     </div>
                 </div>
             </div>
