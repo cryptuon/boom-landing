@@ -9,7 +9,7 @@ export default function sectionA() {
           <p className="text-4xl  xl:text-7xl font-display text-start">
             Leverage the power of NFTs
           </p>
-          <p className="text-5xl">
+          <p className="text-5xl font-body">
             Collaborate with the existing NFT collections using Boom and target
             their audience for your brand growth and sales.
           </p>

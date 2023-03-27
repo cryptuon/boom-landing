@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ['Luckiest Guy'],
+        body: ['Lato'],
       },
       keyframes: {
         'sectionA': {

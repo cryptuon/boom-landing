@@ -36,7 +36,7 @@ function Steps({ number, title, description }) {
     <div className="flex-1 flex flex-col items-center">
       <div className='flex w-[20vw] flex-col gap-2'>
         <p className="text-4xl xl:text-7xl font-display">Step {number}</p>
-        <p className="text-4xl">{title}</p>
+        <p className="text-4xl font-body">{title}</p>
         <p className="text-2xl">{description}</p>
       </div>
     </div>

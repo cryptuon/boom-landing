@@ -9,7 +9,7 @@ export default function sectionC() {
           <p className="text-4xl  xl:text-7xl font-display text-start">
             Create a new sales channel for your brand
           </p>
-          <p className="text-5xl">
+          <p className="text-5xl font-body">
             Create a new sales channel for your brand from the web3 space. Using
             Boom, create acquisition campaigns and launch them in minutes.
           </p>

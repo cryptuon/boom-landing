@@ -14,7 +14,7 @@ export default function sectionB() {
           <p className="text-4xl  xl:text-7xl font-display text-start">
             Find out your target audience in web3
           </p>
-          <p className="text-5xl">
+          <p className="text-5xl font-body">
             Using our analytics tools, find out the users who are showing
             interest in your product and want to avail your services.
           </p>
