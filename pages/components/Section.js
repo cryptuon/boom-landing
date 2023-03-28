@@ -1,6 +1,6 @@
+'use client'
 import Image from 'next/image'
 import { useEffect } from 'react'
-'use client'
 export default function Section({
   title,
   description,
@@ -22,11 +22,28 @@ export default function Section({
           </p>
         </div>
       </div>
-      <div className={`${order2} flex flex-1 md:h-screen w-full relative bg-${section}mobile md:bg-${section} md:hover:animate-${section} bg-contain bg-center bg-no-repeat`} />
+      {(section == 'sectionA') && (<div className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionAmobile md:bg-sectionA md:hover:animate-sectionA bg-contain bg-center bg-no-repeat`}/>)}
+      {(section == 'sectionB') && (<div className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionBmobile md:bg-sectionB md:hover:animate-sectionB bg-contain bg-center bg-no-repeat`}/>)}
+      {(section == 'sectionC') && (<div className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionCmobile md:bg-sectionC md:hover:animate-sectionC bg-contain bg-center bg-no-repeat`}/>)}
       <div id="preloader">
-        <Image src={`/${section}.svg`} alt="preloader" height={1} width={1} />
-        <Image src={`/${section}mobile.svg`} alt="preloader" height={1} width={1} />
-        <Image src={`/${section}hover.svg`} alt="preloader" height={1} width={1} />
+        <Image
+          src={'/' + section + '.svg'}
+          alt="preloader"
+          height={1}
+          width={1}
+        />
+        <Image
+          src={'/' + section + 'mobile.svg'}
+          alt="preloader"
+          height={1}
+          width={1}
+        />
+        <Image
+          src={'/' + section + 'hover.svg'}
+          alt="preloader"
+          height={1}
+          width={1}
+        />
       </div>
     </div>
   )
