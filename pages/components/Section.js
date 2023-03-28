@@ -22,28 +22,32 @@ export default function Section({
           </p>
         </div>
       </div>
-      {(section == 'sectionA') && (<div className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionAmobile md:bg-sectionA md:hover:animate-sectionA bg-contain bg-center bg-no-repeat`}/>)}
-      {(section == 'sectionB') && (<div className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionBmobile md:bg-sectionB md:hover:animate-sectionB bg-contain bg-center bg-no-repeat`}/>)}
-      {(section == 'sectionC') && (<div className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionCmobile md:bg-sectionC md:hover:animate-sectionC bg-contain bg-center bg-no-repeat`}/>)}
+      {section == 'sectionA' && (
+        <div
+          className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionAmobile md:bg-sectionA md:hover:animate-sectionA bg-contain bg-center bg-no-repeat`}
+        />
+      )}
+      {section == 'sectionB' && (
+        <div
+          className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionBmobile md:bg-sectionB md:hover:animate-sectionB bg-contain bg-center bg-no-repeat`}
+        />
+      )}
+      {section == 'sectionC' && (
+        <div
+          className={`${order2} flex flex-1 md:h-screen w-full relative bg-sectionCmobile md:bg-sectionC md:hover:animate-sectionC bg-contain bg-center bg-no-repeat`}
+        />
+      )}
       <div id="preloader">
-        <Image
-          src={'/' + section + '.svg'}
-          alt="preloader"
-          height={1}
-          width={1}
-        />
-        <Image
-          src={'/' + section + 'mobile.svg'}
-          alt="preloader"
-          height={1}
-          width={1}
-        />
-        <Image
-          src={'/' + section + 'hover.svg'}
-          alt="preloader"
-          height={1}
-          width={1}
-        />
+        <Image src={'/sectionA.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionB.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionC.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionAmobile.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionBmobile.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionCmobile.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionAhover.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionBhover.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/sectionChover.svg'} alt="preloader" height={1} width={1} />
+
       </div>
     </div>
   )
