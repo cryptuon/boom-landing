@@ -21,6 +21,7 @@ export default function Home() {
       <main className="snap-y overflow-y-scroll snap-mandatory scroll-smooth overflow-x-hidden h-screen w-screen ">
         <Landing />
         <Section
+        //
           title="Leverage the power of NFTs"
           description="Collaborate with the existing NFT collections using Boom and target their audience for your brand growth and sales."
           section="sectionA"
