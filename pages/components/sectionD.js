@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 export default function sectionD() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center p-5">
-      <p className="text-4xl xl:text-7xl font-display text-center">
+      <p className="text-[7vh] leading-none font-display text-center">
         How Does It Work?
       </p>
       <div className="w-full h-[100%] relative">
@@ -34,10 +34,10 @@ export default function sectionD() {
 function Steps({ number, title, description }) {
   return (
     <div className="flex-1 flex flex-col items-center">
-      <div className='flex w-[20vw] flex-col gap-2'>
-        <p className="text-4xl xl:text-7xl font-display">Step {number}</p>
-        <p className="text-4xl font-body">{title}</p>
-        <p className="text-2xl">{description}</p>
+     <div className='flex w-[20vw] flex-col gap-2'>
+        <p className="text-[7vh] leading-none font-display">Step {number}</p>
+        <p className="text-[4vh] leading-none font-body">{title}</p>
+        <p className="text-[2.5vh] leading-tight">{description}</p>
       </div>
     </div>
   )

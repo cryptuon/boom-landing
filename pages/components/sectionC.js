@@ -6,10 +6,10 @@ export default function sectionC() {
     <div className="w-full h-screen flex justify-between">
       <div className="flex flex-1 items-center justify-center flex-col ">
         <div className="p-32 gap-4 flex flex-col">
-          <p className="text-4xl  xl:text-7xl font-display text-start">
+          <p className="text-[7vh] leading-none font-display text-start">
             Create a new sales channel for your brand
           </p>
-          <p className="text-5xl font-body">
+          <p className="text-[4vh] leading-none font-body">
             Create a new sales channel for your brand from the web3 space. Using
             Boom, create acquisition campaigns and launch them in minutes.
           </p>

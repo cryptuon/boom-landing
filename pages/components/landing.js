@@ -31,7 +31,7 @@ export default function Landing() {
     >
       <div
         id="a"
-        className="flex w-full items-center justify-center mx-40 my-20 flex-col gap-5"
+        className="flex w-full items-center justify-center mx-80 my-40  flex-col gap-5"
       >
         <Image src="/logo.svg" width={400} height={400} />
         <p className="text-4xl xl:leading-tight xl:text-5xl font-display text-center rotate-[-6.95deg]">

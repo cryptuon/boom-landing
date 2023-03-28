@@ -11,10 +11,10 @@ export default function sectionB() {
       ></div>
       <div className="flex flex-1 items-center justify-center flex-col ">
         <div className="p-32 gap-4 flex flex-col">
-          <p className="text-4xl  xl:text-7xl font-display text-start">
+          <p className="text-[7vh] leading-none font-display text-start">
             Find out your target audience in web3
           </p>
-          <p className="text-5xl font-body">
+          <p className="text-[4vh] leading-none font-body">
             Using our analytics tools, find out the users who are showing
             interest in your product and want to avail your services.
           </p>
