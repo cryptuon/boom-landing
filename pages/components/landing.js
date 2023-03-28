@@ -7,13 +7,13 @@ export default function Landing() {
     const elementB = document.querySelector('#b')
 
     function handleMouseEnter() {
-      elementB.classList.remove("bg-[url('/backgroundColor.svg')]")
-      elementB.classList.add("bg-[url('/background.svg')]")
+      elementB.classList.remove("md:bg-[url('/backgroundColor.svg')]")
+      elementB.classList.add("md:bg-[url('/background.svg')]")
     }
 
     function handleMouseLeave() {
-      elementB.classList.add("bg-[url('/backgroundColor.svg')]")
-      elementB.classList.remove("bg-[url('/background.svg')]")
+      elementB.classList.add("md:bg-[url('/backgroundColor.svg')]")
+      elementB.classList.remove("md:bg-[url('/background.svg')]")
     }
 
     elementA.addEventListener('mouseenter', handleMouseEnter)
@@ -35,7 +35,7 @@ export default function Landing() {
         id="a"
         className="flex w-full items-center justify-center md:mx-80 md:my-40 mx-[10vw] my-[15vh] flex-col gap-5"
       >
-        <div className="relative h-[70vh] w-[70vw] md:w-[40vw] ">
+        <div className="relative h-[70vh] w-[70vw] md:w-[40vw]">
           <Image src="/logo.svg" fill />
         </div>
         <p className="leading-none text-[5vh] md:text-[6vh] font-display text-center rotate-[-6.95deg]">
