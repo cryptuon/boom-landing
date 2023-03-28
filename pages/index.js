@@ -3,9 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { useEffect } from 'react'
 import Landing from './components/landing'
-import SectionA from './components/sectionA'
-import SectionB from './components/sectionB'
-import SectionC from './components/sectionC'
+import Section from './components/Section'
 import SectionD from './components/sectionD'
 
 import Summary from './components/summary'
@@ -20,33 +18,36 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div className="h-screen w-screen snap-y overflow-y-scroll snap-mandatory scroll-smooth">
-          <div className="h-screen snap-start">
-            <Landing />
-          </div>
-          <div className="h-screen snap-start">
-            <SectionA />
-          </div>
-          <div className="h-screen snap-start">
-            <SectionB />
-          </div>
-          <div className="h-screen snap-start">
-            <SectionC />
-          </div>
-          <div className="h-screen snap-start">
-            <SectionD />
-          </div>
-          <div className="snap-start">
-            <Summary />
-          </div>
-          <div className="snap-start">
-            <Astro />
-          </div>
-          <div className="snap-start">
-            <Footer />
-          </div>
-        </div>
+      {
+        //snap-y overflow-y-scroll snap-mandatory scroll-smooth
+      }
+      <main className="snap-y overflow-y-scroll snap-mandatory scroll-smooth overflow-x-hidden h-screen w-screen ">
+        <Landing />
+        <Section
+          title="Leverage the power of NFTs"
+          description="Collaborate with the existing NFT collections using Boom and target their audience for your brand growth and sales."
+          section="sectionA"
+          order1="md:order-1 order-2"
+          order2="md:order-2 order-1"
+        />
+        <Section
+          title="Find out your target audience in web3"
+          description="Using our analytics tools, find out the users who are showing interest in your product and want to avail your services."
+          section="sectionB"
+          order1="order-2"
+          order2="order-1"
+        />
+        <Section
+          title="Create a new sales channel for your brand"
+          description="Create a new sales channel for your brand from the web3 space. Using Boom, create acquisition campaigns and launch them in minutes."
+          section="sectionC"
+          order1="md:order-1 order-2"
+          order2="md:order-2 order-1"
+        />
+        <SectionD />
+        <Summary />
+        <Astro />
+        <Footer />
       </main>
     </>
   )

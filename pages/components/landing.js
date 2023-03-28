@@ -27,14 +27,18 @@ export default function Landing() {
   return (
     <div
       id="b"
-      className="w-full h-screen bg-[url('/background.svg')] bg-cover bg-center flex  transtion duration-500 ease-in-out"
+      className="snap-start w-full h-screen
+      bg-[url('/backgroundColor.svg')]
+      md:bg-[url('/background.svg')] bg-cover bg-center flex  transtion duration-500 ease-in-out"
     >
       <div
         id="a"
-        className="flex w-full items-center justify-center mx-80 my-40  flex-col gap-5"
+        className="flex w-full items-center justify-center md:mx-80 md:my-40 mx-[10vw] my-[15vh] flex-col gap-5"
       >
-        <Image src="/logo.svg" width={400} height={400} />
-        <p className="text-4xl xl:leading-tight xl:text-5xl font-display text-center rotate-[-6.95deg]">
+        <div className="relative h-[70vh] w-[70vw] md:w-[40vw] ">
+          <Image src="/logo.svg" fill />
+        </div>
+        <p className="leading-none text-[5vh] md:text-[6vh] font-display text-center rotate-[-6.95deg]">
           Get ahead in the new era of <br />
           internet, it’s the easiest <br />
           way to go web3

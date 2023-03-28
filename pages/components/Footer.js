@@ -5,7 +5,7 @@ import { FaInstagram } from 'react-icons/fa'
 import { FaLinkedinIn } from 'react-icons/fa'
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center px-14 w-full py-5 bg-[#0F0F0F]">
+    <div className="snap-start flex flex-col items-center px-14 w-full py-5 bg-[#0F0F0F]  ">
       <div className="flex w-full flex-row items-center justify-between">
         <div className="flex items-center justify-center relative h-[7vh] md:w-[7.5vw] w-[11vh]">
           <Image src="/logo.svg" alt="logo" fill className="mr-12" />
