@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
@@ -11,17 +10,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      scrollbar: {
-        width: '20px',
-      },
-      // Show the scrollbar on all elements
-      '::-webkit-scrollbar': {
-        display: 'block',
-      },
-      // Show the scrollbar thumb
-      '::-webkit-scrollbar-thumb': {
-        backgroundColor: '#aaa',
-      },
       fontFamily: {
         display: ['Luckiest Guy'],
         body: ['Lato'],
@@ -57,6 +45,17 @@ module.exports = {
       colors: {
         'boom-yellow': '#FFEB33',
         'unselected-gray': '#9F9F9F',
+      },
+      backgroundImage: {
+        'sectionA': "url('/sectionA.svg')",
+        'sectionAmobile': "url('/sectionAmobile.svg')",
+        'sectionAhover': "url('/sectionAhover.svg')",
+        'sectionB': "url('/sectionB.svg')",
+        'sectionBmobile': "url('/sectionBmobile.svg')",
+        'sectionBhover': "url('/sectionBhover.svg')",
+        'sectionC': "url('/sectionC.svg')",
+        'sectionCmobile': "url('/sectionCmobile.svg')",
+        'sectionChover': "url('/sectionChover.svg')",
       },
     },
   },
