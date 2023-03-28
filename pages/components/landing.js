@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useEffect } from 'react'
+import GetInTouch from './getInTouch'
 
 export default function Landing() {
   useEffect(() => {
@@ -43,16 +44,7 @@ export default function Landing() {
           internet, it’s the easiest <br />
           way to go web3
         </p>
-        <div className="flex w-[200px] h-[200px] relative">
-          <Image src="/GetinTouchBottom.svg" fill />
-          <Image
-            className="-translate-x-1 -translate-y-1 
-                            hover:-translate-x-2 hover:-translate-y-2 
-                            active:translate-x-0 active:translate-y-0"
-            src="/GetinTouch.svg"
-            fill
-          />
-        </div>
+          <GetInTouch />
       </div>
       <div id="preloader">
         <img src="/background.svg" alt="preloader" height={1} width={1} />

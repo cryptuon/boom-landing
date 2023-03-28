@@ -1,0 +1,20 @@
+import Image from "next/image"
+export default function GetInTouch(){
+    return (
+        <div className="flex w-[200px] h-[80px] relative"
+          onClick={() => {
+            
+          }}
+        >
+
+          <Image src="/GetinTouchBottom.svg" fill />
+          <Image
+            className="-translate-x-1 -translate-y-1 
+                            hover:-translate-x-2 hover:-translate-y-2 
+                            active:translate-x-0 active:translate-y-0"
+            src="/GetinTouch.svg"
+            fill
+          />
+        </div>
+    )
+}
