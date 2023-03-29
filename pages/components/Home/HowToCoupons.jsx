@@ -66,9 +66,9 @@ export default function HowToCoupons() {
           className={`font-display text-center md:text-start text-4xl xl:text-8xl xl:leading-tight pt-24`}
         >
           How to <br className="hidden md:block" />
-          Get
+          Get NFT
           <br />
-          Coupons
+          benefits?
         </p>
       </div>
     </div>
