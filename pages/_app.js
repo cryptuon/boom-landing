@@ -38,6 +38,7 @@ export default function App({ Component, pageProps }) {
   const isHome = pathname === '/'
   const isWallet = pathname === '/Wallet'
   const isVerify = pathname === '/Verify'
+  const isBrand = pathname === '/Brand'
 
   const { address, isConnected } = useAccount('')
   // const [address, setAddress] = useState(
@@ -65,7 +66,7 @@ export default function App({ Component, pageProps }) {
     }
   }, [user, address])
 
-  if (isWallet || isVerify) {
+  if (isWallet || isVerify || isBrand) {
     return <Component {...pageProps} />
   }
   return (

@@ -12,7 +12,12 @@ export default function NavBar({ user, scale, setScale }) {
     return (
 
         <header>
-            <nav className="flex items-center justify-between flex-wrap p-6 400">
+            <div className=' text-center w-full bg-boom-yellow border-y-2 border-black p-2'>
+                <p className=' font-[500]'>
+                    Are you a Brand? <a href="/Brand" className='underline'>Join us!</a>
+                </p>
+            </div>
+            <nav className="flex items-center justify-between flex-wrap p-6 400 ">
                 <div className="flex items-center flex-1 justify-between ">
                     <div className='relative h-[8vh] md:w-[8.5vw] w-[13vh]'>
                         <Image src="/logo.svg" alt="logo" fill className="mr-12" />

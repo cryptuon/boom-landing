@@ -3,13 +3,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
 
-    // Or if using `src` directory:
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
@@ -24,44 +22,75 @@ module.exports = {
         },
 
         out: {
-          // '0%': { transform: 'translate(-10px,-10px) ' },
           '20%': { transform: 'translate(1px,1px) ' },
-          // '40%': { transform: 'translate(-11px,-11px) ' },
-          // '60%': { transform: 'translate(-8px,-8px) ' },
-          // '80%': { transform: 'translate(-13px,-13px) ' },
           '100%': { transform: 'translate(0px,0px) ' },
         },
 
-        grow:{
+        grow: {
           '0%': { transform: 'scale(0.1) ' },
-          // '10%': { transform: 'scale(0.2) ' },
-          // '20%': { transform: 'scale(0.3) ' },
-          // '30%': { transform: 'scale(0.4) ' },
-          // '40%': { transform: 'scale(0.5) ' },
-          // '50%': { transform: 'scale(0.6) ' },
-          // '60%': { transform: 'scale(0.7) ' },
-          // '70%': { transform: 'scale(0.8) ' },
-          // '80%': { transform: 'scale(0.9) ' },
-          // '90%': { transform: 'scale(1) ' },
           '50%': { transform: 'scale(1) ' },
         },
-        buttonFrames:{
+        buttonFrames: {
           '0%': { transform: 'translate(0px,0px) ' },
-        }
+        },
+        sectionA: {
+          '20%': {
+            backgroundImage: "url('/Brand/public/sectionAhover.svg')",
+            opacity: '1',
+          },
+          '100%': {
+            backgroundImage: "url('/Brand/public/sectionAhover.svg')",
+            opacity: '1',
+          },
+        },
+        sectionB: {
+          '20%': {
+            backgroundImage: "url('/Brand/public/sectionBhover.svg')",
+            opacity: '1',
+          },
+          '100%': {
+            backgroundImage: "url('/Brand/public/sectionBhover.svg')",
+            opacity: '1',
+          },
+        },
+        sectionC: {
+          '20%': {
+            backgroundImage: "url('/Brand/public/sectionChover.svg')",
+            opacity: '1',
+          },
+          '100%': {
+            backgroundImage: "url('/Brand/public/sectionChover.svg')",
+            opacity: '1',
+          },
+        },
       },
       animation: {
         wiggle: 'in 0.75s ease-out forwards',
         wiggleOut: 'out 0.5s ease-in forwards',
-        grow: 'grow 0.5s ease-in forwards', 
+        grow: 'grow 0.5s ease-in forwards',
+        sectionA: 'sectionA 1s ease-in forwards',
+        sectionB: 'sectionB 1s ease-in forwards',
+        sectionC: 'sectionC 1s ease-in forwards',
       },
       fontFamily: {
-        // display: ['var(--font-luckiestGuy)', ...defaultTheme.fontFamily.sans],
         display: ['Luckiest Guy'],
+        body: ['Lato'],
       },
       colors: {
         'boom-yellow': '#FFEB33',
         'unselected-gray': '#9F9F9F',
-      }
+      },
+      backgroundImage: {
+        sectionA: "url('/Brand/public/sectionA.svg')",
+        sectionAmobile: "url('/Brand/public/sectionAmobile.svg')",
+        sectionAhover: "url('/Brand/public/sectionAhover.svg')",
+        sectionB: "url('/Brand/public/sectionB.svg')",
+        sectionBmobile: "url('/Brand/public/sectionBmobile.svg')",
+        sectionBhover: "url('/Brand/public/sectionBhover.svg')",
+        sectionC: "url('/Brand/public/sectionC.svg')",
+        sectionCmobile: "url('/Brand/public/sectionCmobile.svg')",
+        sectionChover: "url('/Brand/public/sectionChover.svg')",
+      },
     },
   },
   plugins: [
