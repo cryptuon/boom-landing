@@ -3,7 +3,7 @@ export default function GetInTouch(){
     return (
         <div className="flex w-[200px] h-[80px] relative"
           onClick={() => {
-            
+            window.open('https://g3slr1jsc65.typeform.com/to/FFPcjGzU')
           }}
         >
 
