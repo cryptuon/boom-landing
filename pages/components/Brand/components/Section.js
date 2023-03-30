@@ -39,14 +39,14 @@ export default function Section({
       )}
       <div id="preloader">
         <Image src={'/Brand/public/sectionA.svg'} alt="preloader" height={1} width={1} />
-        <Image src={'/Brand/public/sectionB.svg'} alt="preloader" height={1} width={1} />
-        <Image src={'/Brand/public/sectionC.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/Brand/public/sectionB.png'} alt="preloader" height={1} width={1} />
+        <Image src={'/Brand/public/sectionC.png'} alt="preloader" height={1} width={1} />
         <Image src={'/Brand/public/sectionAmobile.svg'} alt="preloader" height={1} width={1} />
-        <Image src={'/Brand/public/sectionBmobile.svg'} alt="preloader" height={1} width={1} />
-        <Image src={'/Brand/public/sectionCmobile.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/Brand/public/sectionBmobile.png'} alt="preloader" height={1} width={1} />
+        <Image src={'/Brand/public/sectionCmobile.png'} alt="preloader" height={1} width={1} />
         <Image src={'/Brand/public/sectionAhover.svg'} alt="preloader" height={1} width={1} />
-        <Image src={'/Brand/public/sectionBhover.svg'} alt="preloader" height={1} width={1} />
-        <Image src={'/Brand/public/sectionChover.svg'} alt="preloader" height={1} width={1} />
+        <Image src={'/Brand/public/sectionBhover.png'} alt="preloader" height={1} width={1} />
+        <Image src={'/Brand/public/sectionChover.png'} alt="preloader" height={1} width={1} />
 
       </div>
     </div>

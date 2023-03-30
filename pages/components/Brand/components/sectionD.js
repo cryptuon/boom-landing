@@ -19,19 +19,19 @@ export default function sectionD() {
           number="1"
           title="Select NFT collections for targeting"
           description="Hire technical and creative team which add more operational and financial load to company"
-          image="/Brand/public/Step1.svg"
+          image="/Brand/public/Step1.png"
         />
         <Steps
           number="2"
           title="Start a marketing campaign"
           description="Start a marketing campaign and announce the benefits to the NFT users."
-          image="/Brand/public/Step2.svg"
+          image="/Brand/public/Step2.png"
         />
         <Steps
           number="3"
           title="Boom handles everything else"
           description="Boom will handle all the logistics required to help people avail the offers"
-          image="/Brand/public/Step3.svg"
+          image="/Brand/public/Step3.png"
         />
       </div>
     </div>
