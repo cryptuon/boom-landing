@@ -8,13 +8,13 @@ export default function Landing() {
     const elementB = document.querySelector('#b')
 
     function handleMouseEnter() {
-      elementB.classList.remove("md:bg-[url('/backgroundColor.svg')]")
-      elementB.classList.add("md:bg-[url('/background.svg')]")
+      elementB.classList.remove("md:bg-[url('/backgroundColor.png')]")
+      elementB.classList.add("md:bg-[url('/background.png')]")
     }
 
     function handleMouseLeave() {
-      elementB.classList.add("md:bg-[url('/backgroundColor.svg')]")
-      elementB.classList.remove("md:bg-[url('/background.svg')]")
+      elementB.classList.add("md:bg-[url('/backgroundColor.png')]")
+      elementB.classList.remove("md:bg-[url('/background.png')]")
     }
 
     elementA.addEventListener('mouseenter', handleMouseEnter)
@@ -29,8 +29,8 @@ export default function Landing() {
     <div
       id="b"
       className="snap-start w-full h-screen
-      bg-[url('/backgroundColor.svg')]
-      md:bg-[url('/background.svg')] bg-cover bg-center flex  transtion duration-500 ease-in-out"
+      bg-[url('/backgroundColor.png')]
+      md:bg-[url('/background.png')] bg-cover bg-center flex  transtion duration-500 ease-in-out"
     >
       <div
         id="a"
@@ -47,8 +47,8 @@ export default function Landing() {
           <GetInTouch />
       </div>
       <div id="preloader">
-        <img src="/background.svg" alt="preloader" height={1} width={1} />
-        <img src="/backgroundColor.svg" alt="preloader" height={1} width={1} />
+        <img src="/background.png" alt="preloader" height={1} width={1} />
+        <img src="/backgroundColor.png" alt="preloader" height={1} width={1} />
       </div>
     </div>
   )
