@@ -8,7 +8,7 @@ export default function sectionD() {
         How Does It Work?
       </p>
       <div className="hidden md:flex w-full h-[100%] relative">
-        <Image src="/sectionD.svg" fill />
+        <img src="/sectionD.png" fill />
       </div>
       <div className="
           snap-x overflow-x-scroll snap-mandatory scroll-smooth 
@@ -43,7 +43,7 @@ function Steps({ number, title, description, image }) {
     <div className="snap-start w-screen h-fit  flex-1 flex flex-col items-center text-center md:text-start">
       <div className="flex w-screen h-fit md:w-[20vw] flex-col md:gap-2 justify-center md:justify-start gap-5 md:items-start items-center p-10 md:p-0">
         <div className="md:hidden h-[35vmax] w-[35vmax] relative">
-          <Image src={image} fill />
+          <img src={image}/>
         </div>
         <p className="md:text-[7vh] text-[5vh] leading-none font-display">
           Step {number}
