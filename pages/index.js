@@ -16,7 +16,8 @@ export default function Home() {
         <title>Boom</title>
         <meta name="description" content="Easiest way to go web3!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
+        <meta name="logo" content="/favicon.png" />
+        <link rel="icon" type="image/png" href="https://boom.fan/favicon.png" />
       </Head>
       <main className="snap-y overflow-y-scroll snap-mandatory scroll-smooth overflow-x-hidden h-screen w-screen ">
         <Landing />
