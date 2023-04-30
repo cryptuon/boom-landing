@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // images: {
+  //   // loader: "akamai",
+  //   // path: "", // <----- THIS IS THE ISSUE
+  // },
   images: {
-    loader: "akamai",
-    path: "", // <----- THIS IS THE ISSUE
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.**',
+      },
+    ],
   },
 }
 
