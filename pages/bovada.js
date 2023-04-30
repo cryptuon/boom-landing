@@ -7,26 +7,14 @@ function Bovada() {
   const { address, isConnected } = useAccount('')
 
   const redirectToBovada = async () => {
-    // await increaseCount('bovada');
+    await increaseCount('bovada');
     window.location.href = 'https://bit.ly/BoomBV';
   }
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     redirectToBovada();
-  //   }, 1000);
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   return (
     <>
-      <Head>
-        {/* <meta http-equiv="refresh" content="1; url= https://bit.ly/BoomBV" /> */}
-      </Head>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1 className="text-center">Redirecting to Bovada...</h1>
+            <div className='h-full w-full flex items-center justify-center'>
+            {/* <h1 className="text-center">Redirecting to Bovada...</h1> */}
             {
               isConnected ? (
                 <div className="text-center">
@@ -35,24 +23,20 @@ function Bovada() {
                     address={address}
                     details={{
                       OfferHeadline: 'Bovada',
-                      OfferDescription: 'Bovada is a trusted online gambling site offering sports betting, poker, casino games and betting on horse racing. Join today to claim your welcome bonuses!',
-                      OfferImage: 'https://www.bovada.lv/wp-content/uploads/2021/03/bovada-logo-og.png',
+                      OfferDescription: 'Bovada will match the first deposit of $25 or more made by you, up to a maximum of $1000! Click the button below to avail the offer!',
+                      OfferImage: 'https://www.bovada.lv/content/images/logo_main.svg',
                     }}
                     link={ 'https://bit.ly/BoomBV'}
                     showSelected={true}
-
                   />
                 </div>
               ) : (
-                <div className="text-center">
+                <div>
                   <WalletButton />
                 </div>
-              )
-                 
+              )  
             }
           </div>
-        </div>
-      </div>
     </>
   );
 }
