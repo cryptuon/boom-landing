@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import WalletButton from './components/WalletConnectButton';
 import { configureChains, createClient, WagmiConfig, useAccount, useConnect, useEnsName } from 'wagmi'
 import SmallTicketDetails from './components/SmallTicketsDetails';
+import NavBar from './components/NavBar'
+
 function Bovada() {
   const { address, isConnected } = useAccount('')
 
@@ -14,7 +16,6 @@ function Bovada() {
   return (
     <>
             <div className='h-full w-full flex items-center justify-center'>
-            {/* <h1 className="text-center">Redirecting to Bovada...</h1> */}
             {
               isConnected ? (
                 <div className="text-center">
@@ -32,6 +33,7 @@ function Bovada() {
                 </div>
               ) : (
                 <div>
+                    <NavBar />
                   <WalletButton />
                 </div>
               )  
