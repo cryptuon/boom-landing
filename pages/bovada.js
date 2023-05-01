@@ -15,6 +15,20 @@ function Bovada() {
 
   return (
     <>
+        <Head>
+            <title>Boom</title>
+            <meta name="description" content="Easiest way to go web3!" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="logo" content="/favicon.png" />
+            <link rel="icon" type="image/png" href="https://boom.fan/favicon.png" />
+
+            <meta name="twitter:card" content="summary" />
+            <meta property="twitter:url" content="https://boom.fan" />
+            <meta property="twitter:title" content="Boom" />
+            <meta name="twitter:description" content="Easiest way to go web3!" />
+            <meta name="twitter:site" content="https://boom.fan" />
+            <meta name="twitter:creator" content="@BoomRewards" />
+        </Head>
             <div className='h-full w-full flex items-center justify-center'>
             {
               isConnected ? (
