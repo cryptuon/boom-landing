@@ -44,7 +44,7 @@ export default function SmallTicketDetails({ details, link, showSelected, setSho
             {isConnected ? (
               <div
                 onClick={async () => {
-                  await increaseCount('bovada');
+                  await increaseCount('bovada_addresses', address);
                   window.location.href = link;
                 }}
                 className="flex flex-row justify-around items-center h-fit m-[1vmax] border-2 border-black rounded-lg hover:bg-boom-yellow cursor-pointer "
@@ -81,17 +81,21 @@ export default function SmallTicketDetails({ details, link, showSelected, setSho
   )
 }
 
-async function increaseCount(name) {
+
+async function increaseCount(name, address) {
   const response = await fetch('/api/increaseCount', {
     method: 'POST',
-    body: JSON.stringify({ name: name }),
+    body: JSON.stringify({ name: name, address: address }),
     headers: {
       'Content-Type': 'application/json',
     },
-  });
-  const data = await response.json();
-  return data;
+  })
+  const data = await response.json()
+  // alert(JSON.stringify(data))
+  return data
 }
+
+
 
 
 /*
