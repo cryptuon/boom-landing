@@ -55,7 +55,7 @@ function Bovada() {
             />
           </div>
         ) : (
-          <div>
+          <div className='flex justify-center items-center flex-col'>
             <NavBar />
             <WalletButton />
           </div>
